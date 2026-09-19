@@ -74,12 +74,98 @@ Fe • Esperanza • Caridad
 <h2>Escucha Radio Café y Fe</h2>
 <p class="subtitle">Música, reflexiones y cuentos de esperanza</p>
 </div></div>
-<section><h2>📻 Programación</h2><div class="schedule">
-<div class="program"><strong>8:00 AM</strong><h3>Café y Fe</h3><p>Una mañana para comenzar con esperanza.</p></div>
-<div class="program"><strong>10:00 AM</strong><h3>Reflexiones</h3><p>Palabras para alimentar el corazón.</p></div>
-<div class="program"><strong>12:00 PM</strong><h3>Música de Fe</h3><p>Cantos y música para acompañar tu día.</p></div>
-<div class="program"><strong>3:00 PM</strong><h3>Cuentos de Esperanza</h3><p>Historias que inspiran y nos acercan a Dios.</p></div>
-</div></section>
+<section>
+<h2>📅 Programación</h2>
+
+<div class="schedule">
+
+<div class="program">
+<strong>5:00 AM – 7:00 AM</strong>
+<h3>🌅 Despertando con Fe</h3>
+<p>Música tranquila y oración para comenzar el día.</p>
+</div>
+
+<div class="program">
+<strong>7:00 AM – 9:00 AM</strong>
+<h3>☕ Café con Dios</h3>
+<p>Reflexiones, oración y música para alimentar el corazón.</p>
+</div>
+
+<div class="program">
+<strong>9:00 AM – 11:00 AM</strong>
+<h3>🎵 Alabanza y Adoración</h3>
+<p>Música de fe para acompañar tu día.</p>
+</div>
+
+<div class="program">
+<strong>11:00 AM – 1:00 PM</strong>
+<h3>❤️ Cuentos de Esperanza</h3>
+<p>Historias que inspiran y nos acercan a Dios.</p>
+</div>
+
+<div class="program">
+<strong>1:00 PM – 3:00 PM</strong>
+<h3>🎶 Música para el Alma</h3>
+<p>Cantos y música para fortalecer la fe.</p>
+</div>
+
+<div class="program">
+<strong>3:00 PM – 5:00 PM</strong>
+<h3>✝️ La Hora de la Misericordia</h3>
+<p>Oración, reflexión y misericordia.</p>
+</div>
+
+<div class="program">
+<strong>5:00 PM – 7:00 PM</strong>
+<h3>🙏 Fe, Esperanza y Caridad</h3>
+<p>Reflexiones, testimonios y música para terminar el día.</p>
+</div>
+
+</div>
+</section>
+ <script>
+function actualizarPrograma() {
+  const programas = document.querySelectorAll(".program");
+
+  const horaActual = new Date().toLocaleString("en-US", {
+    timeZone: "America/New_York",
+    hour: "numeric",
+    hour12: false
+  });
+
+  const hora = parseInt(horaActual);
+
+  programas.forEach((programa, index) => {
+    programa.style.border = "";
+    programa.style.boxShadow = "";
+
+    const viejo = programa.querySelector(".ahora-en-vivo");
+    if (viejo) viejo.remove();
+
+    if (hora >= 5 && hora < 19) {
+      const programaActual = Math.floor((hora - 5) / 2);
+
+      if (index === programaActual) {
+        programa.style.border = "3px solid #d32b1f";
+        programa.style.boxShadow = "0 0 15px rgba(211,43,31,0.35)";
+
+        const indicador = document.createElement("div");
+        indicador.className = "ahora-en-vivo";
+        indicador.textContent = "🔴 AHORA EN VIVO";
+        indicador.style.color = "#d32b1f";
+        indicador.style.fontWeight = "bold";
+        indicador.style.fontSize = "16px";
+        indicador.style.marginBottom = "8px";
+
+        programa.prepend(indicador);
+      }
+    }
+  });
+}
+
+actualizarPrograma();
+setInterval(actualizarPrograma, 30000);
+</script>
 <section class="social"><h2>📱 Síguenos</h2>
 <a class="social" href="https://youtube.com/@lucascatolic" target="_blank">▶️ YouTube</a>
 <a class="social" href="https://www.facebook.com/gotade.esperanza.14/" target="_blank">🔵 Facebook</a>
