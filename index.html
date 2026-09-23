@@ -4,333 +4,729 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Radio Café y Fe</title>
+
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
-body{font-family:Arial,Helvetica,sans-serif;background:linear-gradient(135deg,#f7efe3,#fffaf3);color:#3d2b1f;min-height:100vh}
-header{background:#5b351f;color:#fff;text-align:center;padding:30px 20px}
-.cross{font-size:34px} h1{font-size:42px;margin:8px 0} header p{font-size:17px}
-.hero{max-width:900px;margin:42px auto;padding:20px}
-.card{background:#f7ead2;border-radius:24px;padding:38px 25px;box-shadow:0 12px 35px rgba(70,45,25,.14);text-align:center}
-.live{display:inline-block;background:#b52b2b;color:#fff;padding:8px 17px;border-radius:30px;font-weight:bold;margin-bottom:18px}
-h2{font-size:30px;margin-bottom:10px}.subtitle{color:#765744;margin-bottom:25px}
-.player-box{max-width:760px;margin:20px auto 0;text-align:left}
-section{max-width:1000px;margin:30px auto;padding:20px}
-section>h2{text-align:center;margin-bottom:22px}
-.schedule{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
-.program{background:#fff;padding:22px;border-radius:16px;box-shadow:0 5px 18px rgba(70,45,25,.09)}
-.program strong{color:#8b5a35}.program h3{margin:7px 0}
-.social{text-align:center;margin-bottom:45px}.social a{display:inline-block;margin:7px;padding:12px 18px;border-radius:25px;background:#5b351f;color:#fff;text-decoration:none}
-footer{background:#3d281c;color:#fff;text-align:center;padding:25px}
-@media(max-width:600px){h1{font-size:32px}.hero{margin-top:20px}.card{padding:30px 12px}}
+*{
+  box-sizing:border-box;
+  margin:0;
+  padding:0;
+}
+
+body{
+  font-family:Arial,Helvetica,sans-serif;
+  background:linear-gradient(135deg,#f7efe3,#fffaf3);
+  color:#3d2b1f;
+  min-height:100vh;
+}
+
+header{
+  background:#5b351f;
+  color:#fff;
+  text-align:center;
+  padding:0 0 22px;
+}
+
+header img{
+  display:block;
+  width:100%;
+  max-height:550px;
+  object-fit:cover;
+}
+
+h1{
+  font-size:42px;
+  margin:8px 0;
+}
+
+header p{
+  font-size:17px;
+}
+
+.hero{
+  max-width:900px;
+  margin:28px auto 0;
+  padding:20px;
+}
+
+.card{
+  background:#f7ead2;
+  border-radius:24px;
+  padding:38px 25px;
+  box-shadow:0 12px 35px rgba(70,45,25,.14);
+  text-align:center;
+}
+
+.live{
+  display:inline-block;
+  background:#b52b2b;
+  color:#fff;
+  padding:8px 17px;
+  border-radius:30px;
+  font-weight:bold;
+  margin-bottom:18px;
+}
+
+h2{
+  font-size:30px;
+  margin-bottom:10px;
+}
+
+.subtitle{
+  color:#765744;
+  margin-bottom:25px;
+}
+
+.player-box{
+  width:100%;
+  max-width:850px;
+  margin:25px auto 0;
+  background:#f7ead2;
+  padding:18px;
+  border-radius:20px;
+  box-shadow:0 8px 25px rgba(70,45,25,.18);
+}
+
+section{
+  max-width:1000px;
+  margin:30px auto;
+  padding:20px;
+}
+
+section>h2{
+  text-align:center;
+  margin-bottom:22px;
+}
+
+.community-card{
+  background:#f7ead2;
+  border-radius:24px;
+  padding:30px 20px;
+  box-shadow:0 8px 25px rgba(70,45,25,.12);
+  text-align:center;
+}
+
+.schedule{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:16px;
+}
+
+.program{
+  background:#fff;
+  padding:22px;
+  border-radius:16px;
+  box-shadow:0 5px 18px rgba(70,45,25,.09);
+}
+
+.program strong{
+  color:#8b5a35;
+}
+
+.program h3{
+  margin:7px 0;
+}
+
+.social{
+  text-align:center;
+  margin-bottom:45px;
+}
+
+.social a{
+  display:inline-block;
+  margin:7px;
+  padding:12px 18px;
+  border-radius:25px;
+  background:#5b351f;
+  color:#fff;
+  text-decoration:none;
+}
+
+footer{
+  background:#3d281c;
+  color:#fff;
+  text-align:center;
+  padding:25px;
+}
+
+@media(max-width:600px){
+
+  h1{
+    font-size:32px;
+  }
+
+  .hero{
+    margin-top:12px;
+    padding:12px;
+  }
+
+  .card{
+    padding:28px 12px;
+  }
+
+  .player-box{
+    padding:10px;
+    margin-top:18px;
+  }
+
+  header p{
+    font-size:16px;
+  }
+
+}
 </style>
 </head>
-<body>
-<header style="position:relative;"><img src="a_warm_cinematic_inspirational_catholic_themed_p.png" alt="Radio Café y Fe" style="width:100%;max-height:550px;object-fit:cover;"
 
-<h1>Radio Café y Fe</h1>
-<p>Fe • Esperanza • Caridad</p>
+<body>
+
+<!-- PORTADA -->
+<header>
+
+  <img
+    src="a_warm_cinematic_inspirational_catholic_themed_p.png"
+    alt="Radio Café y Fe"
+  >
+
+  <h1>Radio Café y Fe</h1>
+
+  <p>Fe • Esperanza • Caridad</p>
+
 </header>
 
+
+<!-- BARRA PRINCIPAL -->
 <nav style="display:flex;align-items:center;justify-content:center;gap:10px;padding:12px;background:#f7ead2;flex-wrap:wrap;">
 
   <div style="font-size:20px;font-weight:bold;color:#5b351f;margin-right:10px;">
     ☕ Café y Fe RADIO
   </div>
 
-  <button onclick="document.getElementById('tienda').style.display='block'"
-    style="background:#d9a441;color:white;border:0;padding:12px 20px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;">
+
+  <button
+    onclick="document.getElementById('tienda').style.display='block'"
+    style="background:#d9a441;color:white;border:0;padding:12px 20px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;"
+  >
     🛍️ TIENDA
   </button>
 
-  <button onclick="document.getElementById('seguir').style.display='block'"
-    style="background:#5b351f;color:white;border:0;padding:12px 20px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;">
+
+  <button
+    onclick="document.getElementById('seguir').style.display='block'"
+    style="background:#5b351f;color:white;border:0;padding:12px 20px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;"
+  >
     🔔 SEGUIR
   </button>
 
-  <button onclick="document.getElementById('menu').style.display='block'"
-    style="background:#8b5a3c;color:white;border:0;padding:12px 18px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;">
+
+  <button
+    onclick="document.getElementById('menu').style.display='block'"
+    style="background:#8b5a3c;color:white;border:0;padding:12px 18px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;"
+  >
     ☰ MENÚ
   </button>
 
 </nav>
-  <div id="menu" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(91,53,31,.95);z-index:10001;padding:30px;overflow:auto;">
+
+
+<!-- MENÚ -->
+<div
+  id="menu"
+  style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(91,53,31,.95);z-index:10001;padding:30px;overflow:auto;"
+>
 
   <div style="max-width:600px;margin:auto;background:#f7ead2;border-radius:25px;padding:30px;text-align:center;">
 
-    <button onclick="document.getElementById('menu').style.display='none'"
-      style="float:right;background:#5b351f;color:white;border:0;padding:8px 14px;border-radius:20px;font-size:18px;cursor:pointer;">
+    <button
+      onclick="document.getElementById('menu').style.display='none'"
+      style="float:right;background:#5b351f;color:white;border:0;padding:8px 14px;border-radius:20px;font-size:18px;cursor:pointer;"
+    >
       ✕
     </button>
+
 
     <h2 style="color:#5b351f;font-size:30px;margin-bottom:25px;">
       ☰ Menú Café y Fe
     </h2>
 
-  <button onclick="document.getElementById('grabados').style.display='block'"
-style="display:block;width:100%;background:#5b351f;color:white;border:0;padding:15px;margin:12px 0;border-radius:25px;font-size:17px;font-weight:bold;cursor:pointer;">
-  🎧 Programas grabados
-</button>
 
-  <button onclick="document.getElementById('menu').style.display='none';document.querySelector('.schedule').scrollIntoView({behavior:'smooth'})"
-style="display:block;width:100%;background:#d9a441;color:white;border:0;padding:15px;margin:12px 0;border-radius:25px;font-size:17px;font-weight:bold;cursor:pointer;">
-📅 Programación
-</button>
+    <button
+      onclick="document.getElementById('grabados').style.display='block'"
+      style="display:block;width:100%;background:#5b351f;color:white;border:0;padding:15px;margin:12px 0;border-radius:25px;font-size:17px;font-weight:bold;cursor:pointer;"
+    >
+      🎧 Programas grabados
+    </button>
 
- <button onclick="document.getElementById('menu').style.display='none';document.querySelector('.giscus').scrollIntoView({behavior:'smooth'})"
-style="display:block;width:100%;background:#8b5a3c;color:white;border:0;padding:15px;margin:12px 0;border-radius:25px;font-size:17px;font-weight:bold;cursor:pointer;">
-  💬 Comunidad
-</button>
 
-    <button style="display:block;width:100%;background:#5b351f;color:white;border:0;padding:15px;margin:12px 0;border-radius:25px;font-size:17px;font-weight:bold;cursor:pointer;">
+    <button
+      onclick="document.getElementById('menu').style.display='none';document.querySelector('.schedule').scrollIntoView({behavior:'smooth'})"
+      style="display:block;width:100%;background:#d9a441;color:white;border:0;padding:15px;margin:12px 0;border-radius:25px;font-size:17px;font-weight:bold;cursor:pointer;"
+    >
+      📅 Programación
+    </button>
+
+
+    <button
+      onclick="document.getElementById('menu').style.display='none';document.querySelector('.community-card').scrollIntoView({behavior:'smooth'})"
+      style="display:block;width:100%;background:#8b5a3c;color:white;border:0;padding:15px;margin:12px 0;border-radius:25px;font-size:17px;font-weight:bold;cursor:pointer;"
+    >
+      💬 Comunidad
+    </button>
+
+
+    <button
+      onclick="document.getElementById('menu').style.display='none';document.querySelector('.social').scrollIntoView({behavior:'smooth'})"
+      style="display:block;width:100%;background:#5b351f;color:white;border:0;padding:15px;margin:12px 0;border-radius:25px;font-size:17px;font-weight:bold;cursor:pointer;"
+    >
       📱 Redes sociales
     </button>
 
   </div>
-<div id="grabados" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(91,53,31,.95);z-index:10002;padding:30px;overflow:auto;">
+
+</div>
+
+
+<!-- PROGRAMAS GRABADOS -->
+<div
+  id="grabados"
+  style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(91,53,31,.95);z-index:10002;padding:30px;overflow:auto;"
+>
 
   <div style="max-width:600px;margin:auto;background:#f7ead2;border-radius:25px;padding:30px;text-align:center;">
 
-    <button onclick="document.getElementById('grabados').style.display='none'"
-      style="float:right;background:#5b351f;color:white;border:0;padding:8px 14px;border-radius:20px;font-size:18px;cursor:pointer;">
+    <button
+      onclick="document.getElementById('grabados').style.display='none'"
+      style="float:right;background:#5b351f;color:white;border:0;padding:8px 14px;border-radius:20px;font-size:18px;cursor:pointer;"
+    >
       ✕
     </button>
+
 
     <h2 style="color:#5b351f;font-size:30px;margin-bottom:15px;">
       🎧 Programas Grabados
     </h2>
 
+
     <p style="color:#765744;font-size:17px;line-height:1.5;margin-bottom:25px;">
       Escucha nuevamente nuestras reflexiones, programas y transmisiones de Café y Fe.
     </p>
 
+
     <div style="background:white;border-radius:18px;padding:25px;margin-top:15px;">
-      <div style="font-size:45px;">☕🎙️</div>
+
+      <div style="font-size:45px;">
+        ☕🎙️
+      </div>
+
       <h3 style="color:#5b351f;margin:12px 0;">
         Próximamente
       </h3>
+
       <p style="color:#765744;">
         Aquí podrás escuchar nuestros programas grabados cuando estén disponibles.
       </p>
+
     </div>
 
   </div>
+
 </div>
-<div id="seguir" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(91,53,31,.95);z-index:10000;padding:30px;overflow:auto;">
+
+
+<!-- SEGUIR -->
+<div
+  id="seguir"
+  style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(91,53,31,.95);z-index:10000;padding:30px;overflow:auto;"
+>
 
   <div style="max-width:600px;margin:auto;background:#f7ead2;border-radius:25px;padding:30px;text-align:center;">
 
-    <button onclick="document.getElementById('seguir').style.display='none'"
-      style="float:right;background:#5b351f;color:white;border:0;padding:8px 14px;border-radius:20px;font-size:18px;cursor:pointer;">
+    <button
+      onclick="document.getElementById('seguir').style.display='none'"
+      style="float:right;background:#5b351f;color:white;border:0;padding:8px 14px;border-radius:20px;font-size:18px;cursor:pointer;"
+    >
       ✕
     </button>
+
 
     <h2 style="color:#5b351f;font-size:32px;margin-bottom:10px;">
       🔔 Sigue a Radio Café y Fe
     </h2>
 
+
     <p style="color:#765744;margin-bottom:25px;">
       Acompáñanos en nuestras redes sociales.
     </p>
 
-    <a href="https://youtube.com/@lucascatolic" target="_blank"
-      style="display:block;background:#d32b1f;color:white;text-decoration:none;padding:14px;margin:12px;border-radius:25px;font-weight:bold;">
+
+    <a
+      href="https://youtube.com/@lucascatolic"
+      target="_blank"
+      style="display:block;background:#d32b1f;color:white;text-decoration:none;padding:14px;margin:12px;border-radius:25px;font-weight:bold;"
+    >
       ▶️ Suscribirme en YouTube
     </a>
 
-    <a href="https://www.facebook.com/gotade.esperanza.14/" target="_blank"
-      style="display:block;background:#5b351f;color:white;text-decoration:none;padding:14px;margin:12px;border-radius:25px;font-weight:bold;">
+
+    <a
+      href="https://www.facebook.com/gotade.esperanza.14/"
+      target="_blank"
+      style="display:block;background:#5b351f;color:white;text-decoration:none;padding:14px;margin:12px;border-radius:25px;font-weight:bold;"
+    >
       📘 Seguir en Facebook
     </a>
 
-    <a href="https://www.instagram.com/lucasradio/" target="_blank"
-      style="display:block;background:#8b5a3c;color:white;text-decoration:none;padding:14px;margin:12px;border-radius:25px;font-weight:bold;">
+
+    <a
+      href="https://www.instagram.com/lucasradio/"
+      target="_blank"
+      style="display:block;background:#8b5a3c;color:white;text-decoration:none;padding:14px;margin:12px;border-radius:25px;font-weight:bold;"
+    >
       📸 Seguir en Instagram
     </a>
 
   </div>
+
 </div>
- <div id="tienda" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(91,53,31,.95);z-index:9999;padding:30px;overflow:auto;">
+
+
+<!-- TIENDA -->
+<div
+  id="tienda"
+  style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(91,53,31,.95);z-index:9999;padding:30px;overflow:auto;"
+>
 
   <div style="max-width:1000px;margin:auto;background:#f7ead2;border-radius:25px;padding:30px;text-align:center;">
 
-    <button onclick="document.getElementById('tienda').style.display='none'"
-      style="float:right;background:#5b351f;color:white;border:0;padding:8px 14px;border-radius:20px;font-size:18px;cursor:pointer;">
+    <button
+      onclick="document.getElementById('tienda').style.display='none'"
+      style="float:right;background:#5b351f;color:white;border:0;padding:8px 14px;border-radius:20px;font-size:18px;cursor:pointer;"
+    >
       ✕
     </button>
+
 
     <h2 style="color:#5b351f;font-size:32px;margin-bottom:10px;">
       🛍️ Tienda Café y Fe
     </h2>
 
+
     <p style="color:#765744;margin-bottom:25px;">
       Productos que llevan el mensaje de Fe • Esperanza • Caridad
     </p>
 
+
     <div style="padding:30px;background:white;border-radius:20px;">
-      <h3 style="color:#5b351f;">Próximamente</h3>
+
+      <h3 style="color:#5b351f;">
+        Próximamente
+      </h3>
+
       <p style="color:#765744;">
         Aquí estarán nuestros productos.
       </p>
+
     </div>
 
   </div>
+
 </div>
 
+
+<!-- CONTENIDO PRINCIPAL -->
 <main>
 
-<div class="hero">
-  <div class="card" style="background:#5b351f;color:#fff;">
 
-    <div class="live">🔴 EN VIVO</div>
+  <!-- RADIO -->
+  <div class="hero">
 
-    <h2>Escucha Radio Café y Fe</h2>
+    <div class="card" style="background:#5b351f;color:#fff;">
 
-    <p class="subtitle" style="color:#f4e3c1;">
-      Música, reflexiones y cuentos de esperanza
-    </p>
+      <div class="live">
+        🔴 EN VIVO
+      </div>
 
-  <div style="width:100%;max-width:850px;margin:25px auto;background:#f7ead2;padding:18px;border-radius:20px;box-shadow:0 8px 25px rgba(70,45,25,.18);">  <div data-type="newStreamPlayer"
-         data-publicToken="547e9fb5-4710-4734-9ba1-618b5a4a8f42"
-         data-theme="light"
-         data-color="d9a441"
-         data-channelId=""
-         data-rendered="false"
-         class="cstrEmbed">
 
-      <a href="https://www.caster.fm">Shoutcast Hosting</a>
-      <a href="https://www.caster.fm">Stream Hosting</a>
-      <a href="https://www.caster.fm">Radio Server Hosting</a>
+      <h2>
+        Escucha Radio Café y Fe
+      </h2>
+
+
+      <p class="subtitle" style="color:#f4e3c1;">
+        Música, reflexiones y cuentos de esperanza
+      </p>
+
+
+      <!-- REPRODUCTOR -->
+      <div class="player-box">
+
+        <div
+          data-type="newStreamPlayer"
+          data-publicToken="547e9fb5-4710-4734-9ba1-618b5a4a8f42"
+          data-theme="light"
+          data-color="d9a441"
+          data-channelId=""
+          data-rendered="false"
+          class="cstrEmbed"
+        >
+
+          <a href="https://www.caster.fm">
+            Shoutcast Hosting
+          </a>
+
+          <a href="https://www.caster.fm">
+            Stream Hosting
+          </a>
+
+          <a href="https://www.caster.fm">
+            Radio Server Hosting
+          </a>
+
+        </div>
+
+      </div>
 
     </div>
 
   </div>
-</div>
 
+
+  <!-- COMUNIDAD -->
+  <section class="community-card">
+
+    <h2>
+      💬 Comunidad Café y Fe
+    </h2>
+
+    <p style="margin-bottom:20px;">
+      Déjanos tu mensaje, reflexión o saludo.
+    </p>
+
+    <div class="giscus"></div>
+
+  </section>
+
+
+  <!-- PROGRAMACIÓN -->
+  <section>
+
+    <h2>
+      📅 Programación
+    </h2>
+
+
+    <div class="schedule">
+
+
+      <div class="program">
+        <strong>5:00 AM – 7:00 AM</strong>
+        <h3>🌅 Despertando con Fe</h3>
+        <p>Música tranquila y oración para comenzar el día.</p>
+      </div>
+
+
+      <div class="program">
+        <strong>7:00 AM – 9:00 AM</strong>
+        <h3>☕ Café con Dios</h3>
+        <p>Reflexiones, oración y música para alimentar el corazón.</p>
+      </div>
+
+
+      <div class="program">
+        <strong>9:00 AM – 11:00 AM</strong>
+        <h3>🎵 Alabanza y Adoración</h3>
+        <p>Música de fe para acompañar tu día.</p>
+      </div>
+
+
+      <div class="program">
+        <strong>11:00 AM – 1:00 PM</strong>
+        <h3>❤️ Cuentos de Esperanza</h3>
+        <p>Historias que inspiran y nos acercan a Dios.</p>
+      </div>
+
+
+      <div class="program">
+        <strong>1:00 PM – 3:00 PM</strong>
+        <h3>🎶 Música para el Alma</h3>
+        <p>Cantos y música para fortalecer la fe.</p>
+      </div>
+
+
+      <div class="program">
+        <strong>3:00 PM – 5:00 PM</strong>
+        <h3>✝️ La Hora de la Misericordia</h3>
+        <p>Oración, reflexión y misericordia.</p>
+      </div>
+
+
+      <div class="program">
+        <strong>5:00 PM – 7:00 PM</strong>
+        <h3>🙏 Fe, Esperanza y Caridad</h3>
+        <p>Reflexiones, testimonios y música para terminar el día.</p>
+      </div>
+
+
+    </div>
+
+  </section>
+
+
+  <!-- PROGRAMA ACTUAL -->
+  <script>
+
+    function actualizarPrograma(){
+
+      const programas =
+        document.querySelectorAll(".program");
+
+      const horaActual =
+        new Date().toLocaleString("en-US",{
+          timeZone:"America/New_York",
+          hour:"numeric",
+          hour12:false
+        });
+
+      const hora =
+        parseInt(horaActual);
+
+      programas.forEach((programa,index)=>{
+
+        programa.style.border="";
+        programa.style.boxShadow="";
+
+        const viejo =
+          programa.querySelector(".ahora-en-vivo");
+
+        if(viejo){
+          viejo.remove();
+        }
+
+        if(hora >= 5 && hora < 19){
+
+          const programaActual =
+            Math.floor((hora - 5) / 2);
+
+          if(index === programaActual){
+
+            programa.style.border =
+              "3px solid #d32b1f";
+
+            programa.style.boxShadow =
+              "0 0 15px rgba(211,43,31,0.35)";
+
+
+            const indicador =
+              document.createElement("div");
+
+            indicador.className =
+              "ahora-en-vivo";
+
+            indicador.textContent =
+              "🔴 AHORA EN VIVO";
+
+            indicador.style.color =
+              "#d32b1f";
+
+            indicador.style.fontWeight =
+              "bold";
+
+            indicador.style.fontSize =
+              "16px";
+
+            indicador.style.marginBottom =
+              "8px";
+
+            programa.prepend(indicador);
+
+          }
+
+        }
+
+      });
+
+    }
+
+    actualizarPrograma();
+
+    setInterval(
+      actualizarPrograma,
+      30000
+    );
+
+  </script>
+
+
+  <!-- REDES SOCIALES -->
+  <section class="social">
+
+    <h2>
+      📱 Síguenos
+    </h2>
+
+    <a
+      class="social"
+      href="https://youtube.com/@lucascatolic"
+      target="_blank"
+    >
+      ▶️ YouTube
+    </a>
+
+    <a
+      class="social"
+      href="https://www.facebook.com/gotade.esperanza.14/"
+      target="_blank"
+    >
+      🔵 Facebook
+    </a>
+
+    <a
+      class="social"
+      href="https://www.instagram.com/lucasradio/"
+      target="_blank"
+    >
+      📸 Instagram
+    </a>
+
+  </section>
+
+
+  <!-- GISCUS: COMENTARIOS Y REACCIONES -->
+  <script
+    src="https://giscus.app/client.js"
+    data-repo="josepinedalucas47-byte/radio-cafe-y-fe"
+    data-repo-id="R_kgDOUeHfQg"
+    data-category="Announcements"
+    data-category-id="DIC_kwDOUeHfQs4DF2Nf"
+    data-mapping="pathname"
+    data-strict="0"
+    data-reactions-enabled="1"
+    data-emit-metadata="0"
+    data-input-position="bottom"
+    data-theme="preferred_color_scheme"
+    data-lang="es"
+    crossorigin="anonymous"
+    async>
+  </script>
+
+
+</main>
+
+
+<!-- PIE DE PÁGINA -->
+<footer>
+
+  <p>
+    ✝️ Radio Café y Fe
+  </p>
+
+  <p>
+    Fe • Esperanza • Caridad
+  </p>
+
+</footer>
+
+
+<!-- CASTER.FM -->
 <script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
 
-<section class="card">
-  <h2>💬 Comunidad Café y Fe</h2>
-
-  <p>Déjanos tu mensaje, reflexión o saludo.</p>
-
-  <div class="giscus"></div>
-</section>
-
-<section>
-  <h2>📅 Programación</h2>
-
-<div class="schedule">
-
-<div class="program">
-<strong>5:00 AM – 7:00 AM</strong>
-<h3>🌅 Despertando con Fe</h3>
-<p>Música tranquila y oración para comenzar el día.</p>
-</div>
-
-<div class="program">
-<strong>7:00 AM – 9:00 AM</strong>
-<h3>☕ Café con Dios</h3>
-<p>Reflexiones, oración y música para alimentar el corazón.</p>
-</div>
-
-<div class="program">
-<strong>9:00 AM – 11:00 AM</strong>
-<h3>🎵 Alabanza y Adoración</h3>
-<p>Música de fe para acompañar tu día.</p>
-</div>
-
-<div class="program">
-<strong>11:00 AM – 1:00 PM</strong>
-<h3>❤️ Cuentos de Esperanza</h3>
-<p>Historias que inspiran y nos acercan a Dios.</p>
-</div>
-
-<div class="program">
-<strong>1:00 PM – 3:00 PM</strong>
-<h3>🎶 Música para el Alma</h3>
-<p>Cantos y música para fortalecer la fe.</p>
-</div>
-
-<div class="program">
-<strong>3:00 PM – 5:00 PM</strong>
-<h3>✝️ La Hora de la Misericordia</h3>
-<p>Oración, reflexión y misericordia.</p>
-</div>
-
-<div class="program">
-<strong>5:00 PM – 7:00 PM</strong>
-<h3>🙏 Fe, Esperanza y Caridad</h3>
-<p>Reflexiones, testimonios y música para terminar el día.</p>
-</div>
-
-</div>
-</section>
- <script>
-function actualizarPrograma() {
-  const programas = document.querySelectorAll(".program");
-
-  const horaActual = new Date().toLocaleString("en-US", {
-    timeZone: "America/New_York",
-    hour: "numeric",
-    hour12: false
-  });
-
-  const hora = parseInt(horaActual);
-
-  programas.forEach((programa, index) => {
-    programa.style.border = "";
-    programa.style.boxShadow = "";
-
-    const viejo = programa.querySelector(".ahora-en-vivo");
-    if (viejo) viejo.remove();
-
-    if (hora >= 5 && hora < 19) {
-      const programaActual = Math.floor((hora - 5) / 2);
-
-      if (index === programaActual) {
-        programa.style.border = "3px solid #d32b1f";
-        programa.style.boxShadow = "0 0 15px rgba(211,43,31,0.35)";
-
-        const indicador = document.createElement("div");
-        indicador.className = "ahora-en-vivo";
-        indicador.textContent = "🔴 AHORA EN VIVO";
-        indicador.style.color = "#d32b1f";
-        indicador.style.fontWeight = "bold";
-        indicador.style.fontSize = "16px";
-        indicador.style.marginBottom = "8px";
-
-        programa.prepend(indicador);
-      }
-    }
-  });
-}
-
-actualizarPrograma();
-setInterval(actualizarPrograma, 30000);
-</script>
-<section class="social"><h2>📱 Síguenos</h2>
-<a class="social" href="https://youtube.com/@lucascatolic" target="_blank">▶️ YouTube</a>
-<a class="social" href="https://www.facebook.com/gotade.esperanza.14/" target="_blank">🔵 Facebook</a>
-<a class="social" href="https://www.instagram.com/lucasradio/" target="_blank">📸 Instagram</a>
-</section>
-
-<script src="https://giscus.app/client.js"
-        data-repo="josepinedalucas47-byte/radio-cafe-y-fe"
-        data-repo-id="R_kgDOUeHfQg"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOUeHfQs4DF2Nf"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="preferred_color_scheme"
-        data-lang="es"
-        crossorigin="anonymous"
-        async>
-</script>
-</main>
-<footer><p>✝️ Radio Café y Fe</p><p>Fe • Esperanza • Caridad</p></footer>
-<script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
 </body>
 </html>
