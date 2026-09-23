@@ -30,16 +30,29 @@ footer{background:#3d281c;color:#fff;text-align:center;padding:25px}
 <h1>Radio Café y Fe</h1>
 <p>Fe • Esperanza • Caridad</p>
 </header>
- <nav style="text-align:center;padding:12px;background:#f7ead2;">
-  <button onclick="document.getElementById('tienda').style.display='block'"
-    style="background:#d9a441;color:white;border:0;padding:12px 25px;border-radius:25px;font-size:16px;font-weight:bold;cursor:pointer;">
-    🛍️ TIENDA
-  </button><button onclick="document.getElementById('seguir').style.display='block'"
-style="background:#5b351f;color:white;border:0;padding:12px 25px;border-radius:25px;font-size:16px;font-weight:bold;cursor:pointer;margin-left:10px;">
-🔔 SEGUIR
-</button>
- </nav>
 
+<nav style="display:flex;align-items:center;justify-content:center;gap:10px;padding:12px;background:#f7ead2;flex-wrap:wrap;">
+
+  <div style="font-size:20px;font-weight:bold;color:#5b351f;margin-right:10px;">
+    ☕ Café y Fe RADIO
+  </div>
+
+  <button onclick="document.getElementById('tienda').style.display='block'"
+    style="background:#d9a441;color:white;border:0;padding:12px 20px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;">
+    🛍️ TIENDA
+  </button>
+
+  <button onclick="document.getElementById('seguir').style.display='block'"
+    style="background:#5b351f;color:white;border:0;padding:12px 20px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;">
+    🔔 SEGUIR
+  </button>
+
+  <button onclick="document.getElementById('menu').style.display='block'"
+    style="background:#8b5a3c;color:white;border:0;padding:12px 18px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;">
+    ☰ MENÚ
+  </button>
+
+</nav>
 <div id="seguir" style="display:none;position:fixed;top:0;left:0;width:100%;height:100%;background:rgba(91,53,31,.95);z-index:10000;padding:30px;overflow:auto;">
 
   <div style="max-width:600px;margin:auto;background:#f7ead2;border-radius:25px;padding:30px;text-align:center;">
