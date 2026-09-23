@@ -281,27 +281,72 @@ footer p:first-child{
     alt="Radio Café y Fe"
   >
 
+  <div style="
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    padding:18px 25px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    z-index:10;
+    background:rgba(10,7,5,.48);
+    backdrop-filter:blur(6px);
+  ">
+
+    <div style="
+      font-family:Georgia,serif;
+      color:#f1c66a;
+      font-size:22px;
+      font-weight:bold;
+      text-shadow:0 2px 8px #000;
+    ">
+      ☕ Café y Fe
+    </div>
+
+    <div style="
+      display:flex;
+      gap:10px;
+      align-items:center;
+    ">
+
+      <button
+        onclick="document.getElementById('seguir').style.display='block'"
+        style="
+          background:#d8a94b;
+          color:#1a1009;
+          border:0;
+          padding:10px 16px;
+          border-radius:25px;
+          font-weight:bold;
+          cursor:pointer;
+        "
+      >
+        🔔 SEGUIR
+      </button>
+
+      <button
+        onclick="document.getElementById('menu').style.display='block'"
+        style="
+          background:rgba(255,255,255,.12);
+          color:white;
+          border:1px solid rgba(255,255,255,.35);
+          padding:10px 16px;
+          border-radius:25px;
+          font-weight:bold;
+          cursor:pointer;
+        "
+      >
+        ☰ MENÚ
+      </button>
+
+    </div>
+  </div>
+
   <h1>Radio Café y Fe</h1>
 
-  <p>Fe • Esperanza • Caridad</p>
-
-  <nav>
-
-    <button
-      onclick="document.getElementById('seguir').style.display='block'"
-      style="background:#5b351f;color:white;border:0;padding:12px 20px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;"
-    >
-      🔔 SEGUIR
-    </button>
-
-    <button
-      onclick="document.getElementById('menu').style.display='block'"
-      style="background:#8b5a3c;color:white;border:0;padding:12px 18px;border-radius:25px;font-size:15px;font-weight:bold;cursor:pointer;"
-    >
-      ☰ MENÚ
-    </button>
-
-  </nav>
+  <p>Reflexiones para la vida</p>
 
 </header>
 
