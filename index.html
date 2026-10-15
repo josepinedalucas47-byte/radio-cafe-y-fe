@@ -896,6 +896,26 @@ data-color="#DDAE2B"
   </section>
 
 
+<!-- SEGUIR Y NOTIFICACIONES: CAFE Y FE -->
+<div style="display:flex;justify-content:flex-end;align-items:center;gap:10px;flex-wrap:wrap;margin:0 0 18px;padding:8px 0;">
+
+  <button id="seguirCafeFe"
+    onclick="const b=this;const activo=b.dataset.activo==='si';b.dataset.activo=activo?'no':'si';b.innerHTML=activo?'♧ Seguir':'✓ Siguiendo';b.style.background=activo?'transparent':'#DDAE2B';b.style.color=activo?'#DDAE2B':'#21150f';"
+    data-activo="no"
+    style="background:transparent;color:#DDAE2B;border:1px solid #DDAE2B;border-radius:22px;padding:10px 16px;font-weight:bold;cursor:pointer;">
+    ♧ Seguir
+  </button>
+
+  <button id="campanaCafeFe"
+    onclick="const b=this;const activo=b.dataset.activo==='si';b.dataset.activo=activo?'no':'si';b.innerHTML=activo?'♧ Activar avisos':'🔔 Avisos activados';b.style.background=activo?'transparent':'#DDAE2B';b.style.color=activo?'#DDAE2B':'#21150f';"
+    data-activo="no"
+    style="background:transparent;color:#DDAE2B;border:1px solid #DDAE2B;border-radius:22px;padding:10px 16px;font-weight:bold;cursor:pointer;">
+    ♧ Activar avisos
+  </button>
+
+</div>
+<!-- FIN SEGUIR Y NOTIFICACIONES -->
+
   <!-- GISCUS: COMENTARIOS Y REACCIONES -->
   <script
     src="https://giscus.app/client.js"
