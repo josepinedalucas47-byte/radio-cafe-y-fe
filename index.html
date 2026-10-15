@@ -255,9 +255,23 @@ footer p:first-child{
   }
 
   .player-box{
-    padding:10px;
-    margin-top:18px;
-  }
+    width:100%;
+    max-width:680px;
+    margin:18px auto 0;
+    padding:8px;
+    box-sizing:border-box;
+    border-radius:16px;
+    overflow:hidden;
+}
+.player-box iframe{
+    display:block;
+    width:100%;
+    max-width:100%;
+    border:0;
+}
+.player-box > div{
+    max-width:100%;
+}
 
   h2{
     font-size:28px;
