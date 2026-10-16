@@ -518,33 +518,152 @@ footer strong {
   font-weight: bold;
 }
 
-/* DISEÑO PARA PANTALLAS MEDIANAS */
-@media(max-width:1050px) {
-  .content-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
-  .community-panel { grid-column: 1/-1; }
-  .player-strip { margin: 0 12px; }
-}
 
-/* DISEÑO PARA CELULAR */
 @media(max-width:650px) {
   .topbar {
     position: relative;
-    padding: 10px 12px;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 8px;
   }
 
-  .brand { font-size: 18px; }
+  .brand {
+    font-size: 18px;
+    white-space: nowrap;
+  }
 
   .top-actions {
+    display: flex;
     justify-content: center;
-    gap: 13px;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    width: 100%;
   }
 
-  .top-actions a { font-size: 18px; }
+  .top-actions a.social-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    padding: 7px 8px;
+    font-size: 12px;
+  }
 
-  .top-actions .top-label { font-size: 12px; }
+  .top-actions a.social-link i {
+    font-size: 14px;
+  }
 
-  .top-actions .top-follow { padding: 8px 11px; }
+  .top-actions .top-label {
+    font-size: 12px;
+  }
+
+  .top-actions .top-follow {
+    padding: 8px 10px;
+    font-size: 12px;
+  }
+
+  .top-actions .top-bell {
+    width: 35px;
+    height: 35px;
+    flex-shrink: 0;
+  }
+
+  .cover {
+    min-height: 340px;
+    padding: 28px 16px;
+    background-position: center;
+  }
+
+  .cover-copy {
+    padding-top: 10px;
+  }
+
+  .cover-copy h1 {
+    font-size: clamp(36px,11vw,55px);
+  }
+
+  .cover-copy p {
+    font-size: 17px;
+  }
+
+  .main-nav {
+    padding: 8px;
+    gap: 6px;
+  }
+
+  .main-nav a {
+    flex: 1 1 calc(50% - 6px);
+    min-width: 0;
+    padding: 10px 5px;
+    font-size: 13px;
+  }
+
+  .player-strip {
+    grid-template-columns: 48px minmax(0,1fr);
+    gap: 10px;
+    margin: 0 8px;
+    padding: 12px;
+  }
+
+  .station-mark {
+    width: 46px;
+    height: 46px;
+    font-size: 21px;
+  }
+
+  .station-info strong {
+    font-size: 15px;
+  }
+
+  .station-info span {
+    font-size: 11px;
+  }
+
+  .player-actions {
+    grid-column: 1/-1;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .page-wrap {
+    padding: 0 10px;
+  }
+
+  .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .community-panel {
+    grid-column: auto;
+  }
+
+  .podcast-art {
+    min-height: 75px;
+    font-size: 24px;
+  }
+
+  .podcast-card h3 {
+    font-size: 11px;
+  }
+
+  .podcast-card p {
+    font-size: 10px;
+  }
+
+  .feature-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .schedule-list li {
+    grid-template-columns: 82px 1fr;
+  }
+}
+
+
 
   .cover {
     min-height: 340px;
