@@ -1,48 +1,49 @@
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#120d0a">
 <title>Café y Fe Radio | Una pausa para el alma</title>
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 :root {
   --gold: #DDAE2B;
-  --light: #F6D778;
+  --gold-light: #F6D778;
+  --gold-pale: #ffe9ad;
   --ink: #120d0a;
-  --panel: #21150f;
-  --line: rgba(221,174,43,.55);
+  --panel: #21150e;
+  --line: rgba(221,174,43,.6);
   --muted: #e6d8c3;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+* { box-sizing: border-box; }
 
 html { scroll-behavior: smooth; }
 
 body {
-  font-family: Arial, sans-serif;
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
   background: var(--ink);
-  color: white;
-  line-height: 1.45;
+  color: #fff;
+  line-height: 1.5;
 }
 
 button, a { font: inherit; }
 button { cursor: pointer; }
+a { color: inherit; }
 
 .gold-btn, .outline-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 11px 16px;
-  border-radius: 12px;
-  font-weight: bold;
+  padding: 10px 14px;
+  border-radius: 10px;
+  font-weight: 800;
   text-decoration: none;
 }
 
@@ -54,37 +55,30 @@ button { cursor: pointer; }
 
 .outline-btn {
   background: #120d0a;
-  color: var(--light);
+  color: var(--gold-pale);
   border: 1px solid var(--gold);
 }
 
-/* BARRA DEL LIBRO */
-
-.product-bar {
-  background: linear-gradient(90deg,#f7d98a,#fff0c7,#f7d98a);
-  color: #21150b;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 14px;
-  flex-wrap: wrap;
-  padding: 9px 15px;
-  font-size: 14px;
-  font-weight: bold;
-}
-
-/* PORTADA */
-
+/* BARRA SUPERIOR */
 .cover {
   min-height: 440px;
   position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: #28180e url("a_warm_cinematic_inspirational_catholic_themed_p.png") center/cover no-repeat;
   display: flex;
   align-items: flex-end;
-  padding: 30px 5%;
+  padding: 30px clamp(16px,4vw,58px) 24px;
+}
+
+.cover::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   background:
-    linear-gradient(0deg,rgba(18,13,10,.95),transparent 75%),
-    url("a_warm_cinematic_inspirational_catholic_themed_p.png")
-    center 48% / cover no-repeat;
+    linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.08) 60%,rgba(0,0,0,.3)),
+    linear-gradient(0deg,rgba(18,13,10,.95),transparent 70%);
 }
 
 .topbar {
@@ -92,74 +86,116 @@ button { cursor: pointer; }
   top: 0;
   left: 0;
   right: 0;
-  padding: 14px 25px;
+  z-index: 5;
+  padding: 12px clamp(12px,2.5vw,32px);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 15px;
-  background: rgba(10,7,5,.7);
-  backdrop-filter: blur(8px);
+  gap: 16px;
+  flex-wrap: wrap;
+  background: rgba(16,10,8,.86);
+  border-bottom: 1px solid var(--line);
 }
 
 .brand {
-  color: #ffe9ad;
-  font-family: Georgia,serif;
+  color: var(--gold-pale);
+  font-family: Georgia, serif;
+  font-size: clamp(17px,1.8vw,23px);
   font-weight: bold;
-  font-size: 23px;
   text-decoration: none;
+  white-space: nowrap;
 }
 
-.top-socials {
+.top-actions {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 14px;
+  flex-wrap: wrap;
 }
 
-.top-socials a {
-  font-size: 23px;
+.top-actions a {
+  color: var(--gold-pale) !important;
+  font-size: 20px;
   text-decoration: none;
 }
 
-.top-socials .yt { color: #ff3030; }
-.top-socials .fb { color: #2990ff; }
-.top-socials .ig { color: #ff5795; }
-.top-socials .wa { color: #21d66b; }
+.top-actions a:hover {
+  color: #fff !important;
+}
+
+.top-actions .top-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--gold-pale) !important;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.top-actions button {
+  border: 0;
+}
+
+.top-actions .top-follow {
+  background: linear-gradient(135deg,#ffe49a,#dba22a);
+  color: #21150b;
+  border-radius: 22px;
+  padding: 9px 14px;
+  font-weight: 800;
+}
+
+.top-actions .top-bell {
+  width: 40px;
+  height: 40px;
+  border: 1px solid var(--gold);
+  border-radius: 50%;
+  color: var(--gold-pale);
+  background: #21150e;
+  font-size: 17px;
+}
+
+.cover-copy {
+  max-width: 700px;
+  padding-top: 100px;
+}
 
 .cover-copy h1 {
-  font-family: Georgia,serif;
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(38px,7vw,78px);
   font-style: italic;
-  font-size: clamp(42px,7vw,82px);
-  color: #ffe9ad;
-  text-shadow: 0 4px 20px black;
+  line-height: 1.05;
+  color: var(--gold-pale);
+  text-shadow: 0 4px 20px #000;
 }
 
 .cover-copy p {
-  font-family: Georgia,serif;
+  margin: 10px 0 0;
+  font-family: Georgia, serif;
   font-size: clamp(17px,2vw,25px);
   font-weight: bold;
   color: #fff5df;
 }
 
 .cover-copy .motto {
-  font: bold 12px Arial,sans-serif;
+  font: 800 13px Arial, sans-serif;
   letter-spacing: 2px;
-  color: var(--light);
-  margin-top: 10px;
+  color: var(--gold-pale);
 }
 
-/* MENÚ */
-
+/* MENÚ PRINCIPAL */
 .main-nav {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  padding: 12px 25px;
+  padding: 10px clamp(12px,3vw,38px);
   background: #100b08;
   border-top: 1px solid var(--line);
   border-bottom: 1px solid var(--line);
 }
 
 .main-nav a {
-color: #f5d98b !important;
   flex: 1 1 130px;
   text-align: center;
   text-decoration: none;
@@ -167,97 +203,78 @@ color: #f5d98b !important;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #17100b;
- font-size: 16px;
- font-weight: 800;
+  color: var(--gold-pale) !important;
+  font-size: 15px;
+  font-weight: 800;
 }
 
 .main-nav a:first-child {
   background: linear-gradient(135deg,#ffe49a,#dba22a);
-  color: #21150b;
+  color: #21150b !important;
 }
 
-/* BARRA DE RADIO Y SEGUIMIENTO */
+.main-nav a:hover { background: #3a2614; }
 
+/* REPRODUCTOR Y BOTONES */
 .player-strip {
   max-width: 1400px;
-  margin: auto;
-  padding: 14px 20px;
+  margin: 0 auto;
+  padding: 14px 18px;
   display: grid;
   grid-template-columns: 70px minmax(0,1fr) auto;
   align-items: center;
   gap: 16px;
-  background: linear-gradient(110deg,#100b08,#28190f);
+  background: linear-gradient(110deg,#100b08,#211307);
   border: 1px solid var(--line);
   border-radius: 0 0 16px 16px;
-  box-shadow: 0 10px 26px #0007;
 }
 
 .station-mark {
-  width: 68px;
-  height: 68px;
+  width: 64px;
+  height: 64px;
   display: grid;
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 12px;
-  background: #28190f;
-  color: var(--light);
-  font-size: 30px;
+  color: var(--gold-pale);
+  font-size: 29px;
+  background: #30200f;
 }
 
 .station-info strong {
   display: block;
   font-family: Georgia,serif;
-  font-size: 19px;
+  font-size: 18px;
 }
 
 .station-info span {
   color: var(--muted);
-  font-size: 12px;
-}
-
-.wave {
-  height: 22px;
-  display: flex;
-  gap: 3px;
-  align-items: center;
-  margin-top: 5px;
-}
-
-.wave i {
-  width: 4px;
-  border-radius: 3px;
-  background: var(--gold);
-  height: var(--h);
+  font-size: 13px;
 }
 
 .player-actions {
   display: flex;
   align-items: center;
-  justify-content: flex-end;
   gap: 10px;
 }
 
 .round-play {
   width: 52px;
   height: 52px;
+  border: 0;
   border-radius: 50%;
   background: linear-gradient(135deg,#ffe49a,#dba22a);
   color: #21150b;
-  border: 2px solid #fff0b5;
-  font-size: 21px;
+  font-size: 20px;
 }
-
-.follow-btn { min-width: 120px; }
 
 .bell-btn {
-  width: 55px;
-  height: 55px;
-  padding: 0;
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
-  font-size: 23px;
+  font-size: 19px;
+  padding: 0;
 }
-
-/* CONTENIDO */
 
 .page-wrap {
   max-width: 1440px;
@@ -267,10 +284,7 @@ color: #f5d98b !important;
 
 .content-grid {
   display: grid;
-  grid-template-columns:
-    minmax(240px,.9fr)
-    minmax(300px,1.4fr)
-    minmax(280px,1fr);
+  grid-template-columns: minmax(250px,.9fr) minmax(300px,1.45fr) minmax(260px,1fr);
   gap: 14px;
   align-items: start;
 }
@@ -290,72 +304,65 @@ color: #f5d98b !important;
   gap: 10px;
   padding: 14px 16px;
   border-bottom: 1px solid #d8a52b55;
-  font-weight: bold;
-  font-size: 16px;
+  font-size: 17px;
+  font-weight: 800;
 }
 
 .panel-head i { color: var(--gold); }
 .panel-body { padding: 14px; }
 
-/* PROGRAMACIÓN */
-
-.schedule-list { list-style: none; }
+.schedule-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
 .schedule-list li {
   display: grid;
-  grid-template-columns: 86px 1fr;
-  gap: 8px;
+  grid-template-columns: 85px 1fr;
+  gap: 9px;
   padding: 8px 3px;
   border-bottom: 1px solid #ffffff17;
   font-size: 13px;
 }
 
 .schedule-list time {
-  color: var(--gold);
-  font-weight: bold;
+  color: var(--gold-light);
+  font-weight: 800;
 }
-
-.full-link {
-  width: 100%;
-  margin-top: 12px;
-}
-
-/* PODCAST */
 
 .podcast-grid {
   display: grid;
   grid-template-columns: repeat(3,minmax(0,1fr));
-  gap: 8px;
+  gap: 9px;
 }
 
 .podcast-card {
   overflow: hidden;
-  background: #0d0b09;
   border: 1px solid #d8a52b55;
   border-radius: 12px;
+  background: #0d0b09;
 }
 
 .podcast-art {
-  min-height: 100px;
+  min-height: 95px;
   display: grid;
   place-items: center;
-  color: var(--light);
-  font-size: 32px;
+  color: var(--gold-pale);
+  font-size: 30px;
   background: linear-gradient(135deg,#64401d,#16100b);
 }
 
 .podcast-card h3 {
-  font-size: 12px;
-  padding: 8px;
+  padding: 8px 8px 2px;
+  font-size: 13px;
 }
 
 .podcast-card p {
+  padding: 0 8px 10px;
   color: var(--muted);
   font-size: 11px;
-  padding: 0 8px 10px;
 }
-
-/* PETICIONES Y APOYO */
 
 .feature-grid {
   display: grid;
@@ -365,86 +372,68 @@ color: #f5d98b !important;
 }
 
 .feature-card {
-  padding: 17px;
+  padding: 16px;
   border: 1px solid var(--line);
   border-radius: 14px;
   background: linear-gradient(135deg,#4c2c16,#160f0b);
 }
 
 .feature-card h3 {
+  color: var(--gold-pale);
   font-family: Georgia,serif;
-  color: var(--light);
   font-size: 17px;
-  margin-bottom: 8px;
 }
 
 .feature-card p {
   color: var(--muted);
   font-size: 13px;
-  margin-bottom: 12px;
 }
 
-/* COMUNIDAD Y GISCUS */
+.community-panel { grid-column: auto; }
 
 .community-intro {
-  padding: 16px;
+  padding: 14px;
   border-bottom: 1px solid #d8a52b44;
 }
 
 .community-intro p {
   color: var(--muted);
   font-size: 13px;
-  margin-top: 6px;
-}
-
-.community-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 14px;
-}
-
-.community-controls button {
-  flex: 1;
-  font-size: 13px;
-  padding: 10px;
 }
 
 .giscus {
   padding: 12px;
-  background: transparent;
   min-width: 0;
 }
-
-/* REDES Y BANNER */
 
 .social-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 10px;
+  gap: 9px;
 }
 
 .social-grid a {
-  flex: 1 1 100px;
+  flex: 1 1 110px;
+  padding: 11px;
   text-align: center;
-  padding: 12px;
   text-decoration: none;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #160f0b;
-  font-weight: bold;
+  color: var(--gold-pale) !important;
+  font-weight: 700;
 }
 
 .ticker {
   overflow: hidden;
-  white-space: nowrap;
-  background: #6e3909;
+  margin: 18px 0;
+  padding: 11px;
   border: 1px solid var(--gold);
   border-radius: 9px;
-  padding: 11px;
-  margin: 18px 0;
+  background: #6e3909;
   color: #fff2cf;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .ticker span {
@@ -453,318 +442,203 @@ color: #f5d98b !important;
 }
 
 @keyframes scrolltext {
-  0% { transform: translateX(70vw); }
-  100% { transform: translateX(-100%); }
+  from { transform: translateX(70vw); }
+  to { transform: translateX(-100%); }
 }
 
 footer {
-  background: #090706;
-  border-top: 1px solid var(--line);
-  padding: 25px;
+  padding: 24px 18px;
   text-align: center;
+  border-top: 1px solid var(--line);
+  background: #090706;
   color: var(--muted);
   font-size: 13px;
 }
 
 footer strong {
   display: block;
-  color: var(--light);
-  font-family: Georgia,serif;
-  font-size: 21px;
+  margin-bottom: 5px;
+  color: var(--gold-pale);
+  font: bold 20px Georgia,serif;
 }
 
 /* VENTANAS */
-
 .modal {
   display: none;
   position: fixed;
   inset: 0;
   z-index: 10000;
-  background: rgba(5,3,2,.94);
-  padding: 20px;
-  overflow: auto;
   align-items: center;
   justify-content: center;
+  padding: 20px;
+  overflow: auto;
+  background: #050302ed;
 }
 
 .modal.open { display: flex; }
 
 .modal-box {
   width: min(100%,520px);
-  background: #21150e;
+  padding: 25px;
   border: 1px solid var(--gold);
   border-radius: 18px;
-  padding: 25px;
+  background: #21150e;
   text-align: center;
 }
 
 .modal-box h2 {
-  color: var(--light);
+  color: var(--gold-pale);
   font-family: Georgia,serif;
-  margin-bottom: 12px;
 }
 
-.modal-box p {
-  color: var(--muted);
-  margin: 12px 0;
-}
+.modal-box p { color: var(--muted); }
 
 .modal-close {
   float: right;
-  background: #120d0a;
-  color: white;
-  border: 1px solid var(--line);
-  border-radius: 50%;
   width: 34px;
   height: 34px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: #120d0a;
+  color: white;
 }
 
 .modal-links {
   display: grid;
   gap: 10px;
-  margin-top: 18px;
 }
 
 .modal-links a {
-  padding: 13px;
+  padding: 12px;
+  border: 1px solid var(--line);
   border-radius: 10px;
   background: #3a2515;
-  border: 1px solid var(--line);
+  color: var(--gold-pale);
   text-decoration: none;
   font-weight: bold;
 }
 
-.notice { font-size: 12px; }
-
-/* TABLET */
-
+/* DISEÑO PARA PANTALLAS MEDIANAS */
 @media(max-width:1050px) {
-  .content-grid {
-    grid-template-columns: minmax(0,1fr) minmax(0,1fr);
-  }
-
-  .community-panel { grid-column: 1 / -1; }
-
-  .player-strip {
-    margin-left: 12px;
-    margin-right: 12px;
-  }
+  .content-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .community-panel { grid-column: 1/-1; }
+  .player-strip { margin: 0 12px; }
 }
 
-/* CELULAR */
-
+/* DISEÑO PARA CELULAR */
 @media(max-width:650px) {
-  .product-bar {
-    gap: 8px;
-    font-size: 12px;
-    padding: 9px;
+  .topbar {
+    position: relative;
+    padding: 10px 12px;
+    justify-content: center;
   }
 
+  .brand { font-size: 18px; }
+
+  .top-actions {
+    justify-content: center;
+    gap: 13px;
+  }
+
+  .top-actions a { font-size: 18px; }
+
+  .top-actions .top-label { font-size: 12px; }
+
+  .top-actions .top-follow { padding: 8px 11px; }
+
   .cover {
-    min-height: 350px;
+    min-height: 340px;
     padding: 20px 16px;
     background-position: center;
   }
 
-  .topbar { padding: 10px 12px; }
+  .cover-copy { padding-top: 10px; }
 
-  .brand { font-size: 17px; }
-
-  .top-socials { gap: 10px; }
-
-  .top-socials a { font-size: 18px; }
-
-  .top-socials .wa { display: none; }
-
-  .cover-copy h1 {
-    font-size: clamp(38px,11vw,55px);
-  }
+  .cover-copy h1 { font-size: clamp(36px,11vw,55px); }
 
   .cover-copy p { font-size: 17px; }
-
-  .cover-copy .motto {
-    font-size: 10px;
-    letter-spacing: 1px;
-  }
 
   .main-nav { padding: 8px; gap: 6px; }
 
   .main-nav a {
     flex: 1 1 calc(50% - 6px);
+    min-width: 0;
     padding: 10px 5px;
-    font-size: 12px;
+    font-size: 13px;
   }
 
   .player-strip {
-    grid-template-columns: 46px minmax(0,1fr);
+    grid-template-columns: 48px minmax(0,1fr);
     gap: 10px;
-    padding: 12px;
     margin: 0 8px;
-    border-radius: 0 0 14px 14px;
+    padding: 12px;
   }
 
-  .station-mark {
-    width: 46px;
-    height: 46px;
-    font-size: 21px;
-  }
-
+  .station-mark { width: 46px; height: 46px; font-size: 21px; }
   .station-info strong { font-size: 15px; }
   .station-info span { font-size: 11px; }
 
-  .wave { height: 16px; }
-  .wave i { width: 3px; }
-
   .player-actions {
-    grid-column: 1 / -1;
-    display: grid;
-    grid-template-columns: 48px minmax(0,1fr) 48px;
-    gap: 8px;
+    grid-column: 1/-1;
+    justify-content: center;
+    flex-wrap: wrap;
   }
 
-  .round-play {
-    width: 46px;
-    height: 46px;
-  }
+  .page-wrap { padding: 0 10px; }
 
-  .follow-btn {
-    width: 100%;
-    min-width: 0;
-  }
-
-  .bell-btn {
-    width: 46px;
-    height: 46px;
-    font-size: 19px;
-  }
-
-  .page-wrap {
-    padding: 0 10px;
-    margin: 14px auto;
-  }
-
-  .content-grid { grid-template-columns: 1fr; gap: 12px; }
+  .content-grid { grid-template-columns: 1fr; }
 
   .community-panel { grid-column: auto; }
 
-  .podcast-art { min-height: 75px; font-size: 25px; }
+  .podcast-art { min-height: 75px; font-size: 24px; }
 
-  .podcast-card h3 { font-size: 11px; padding: 6px; }
+  .podcast-card h3 { font-size: 11px; }
 
-  .podcast-card p { font-size: 10px; padding: 0 6px 8px; }
+  .podcast-card p { font-size: 10px; }
 
   .feature-grid { grid-template-columns: 1fr; }
 
-  .schedule-list li {
-    grid-template-columns: 82px 1fr;
-    font-size: 12px;
-  }
-
-  .ticker { font-size: 12px; }
+  .schedule-list li { grid-template-columns: 82px 1fr; }
 }
 
 @media(prefers-reduced-motion:reduce) {
   html { scroll-behavior: auto; }
   .ticker span { animation: none; }
 }
- 
-/* Accesos rápidos de la barra superior */
-.topbar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 16px;
-  flex-wrap: wrap;
-}
-
-.top-socials {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 12px;
-}
-
-.top-socials a,
-.top-socials button {
-  color: #f5d98b;
-  font-size: 18px;
-  text-decoration: none;
-  background: transparent;
-  border: 0;
-  cursor: pointer;
-}
-
-.top-socials .top-follow {
-  background: linear-gradient(135deg, #ffe49a, #dba22a);
-  color: #241606;
-  padding: 9px 14px;
-  border-radius: 20px;
-  font-size: 14px;
-  font-weight: 800;
-}
-
-.top-socials a:hover,
-.top-socials button:hover {
-  color: #ffffff;
-}
-
-@media (max-width: 600px) {
-  .topbar {
-    gap: 10px;
-  }
-
-  .top-socials {
-    gap: 10px;
-  }
-
-  .top-socials a,
-  .top-socials button {
-    font-size: 16px;
-  }
-}
- 
 </style>
 </head>
 
 <body>
 
-<!-- BARRA DEL LIBRO -->
-<div class="product-bar">
-  📚 <strong>Libro: Cuentos para la Vida</strong>
-  <span>$17.00</span>
-  <button class="gold-btn" onclick="openModal('shopModal')">
-    Comprar ahora <i class="fa-solid fa-cart-shopping"></i>
-  </button>
-  <span>🚚 Envíos a todo USA</span>
-</div>
-
-<!-- PORTADA -->
 <header class="cover" id="inicio">
   <div class="topbar">
     <a class="brand" href="#inicio">☕ Café y Fe RADIO</a>
 
-   
-<div class="top-socials" aria-label="Redes sociales y accesos rápidos">
-  <a href="#tienda" aria-label="Tienda" title="Tienda">
-    <i class="fa-solid fa-store"></i>
-  </a>
-  <a href="https://youtube.com/@lucascatolic" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
-    <i class="fa-brands fa-youtube"></i>
-  </a>
-  <a href="https://www.facebook.com/gotade.esperanza.14/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
-    <i class="fa-brands fa-facebook"></i>
-  </a>
-  <a href="https://www.instagram.com/lucasradio/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
-    <i class="fa-brands fa-instagram"></i>
-  </a>
-  <button type="button" class="top-follow" onclick="openModal('followModal')">
-    <i class="fa-solid fa-user-plus"></i> Seguir
-  </button>
-  <button type="button" class="top-bell" id="topBellButton" onclick="enableNotifications()" aria-label="Activar notificaciones" title="Notificaciones">
-    <i class="fa-solid fa-bell"></i>
-  </button>
-</div>
+    <div class="top-actions" aria-label="Accesos rápidos">
+      <button class="top-follow top-label" type="button" onclick="openModal('shopModal')">
+        <i class="fa-solid fa-store"></i> Tienda
+      </button>
 
+      <a href="https://youtube.com/@lucascatolic" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+
+      <a href="https://www.facebook.com/gotade.esperanza.14/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+        <i class="fa-brands fa-facebook"></i>
+      </a>
+
+      <a href="https://www.instagram.com/lucasradio/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+
+      <button class="top-follow" type="button" onclick="openModal('followModal')">
+        <i class="fa-solid fa-user-plus"></i> Seguir
+      </button>
+
+      <button class="top-bell" type="button" onclick="enableNotifications()" aria-label="Activar notificaciones" title="Notificaciones">
+        <i class="fa-solid fa-bell"></i>
+      </button>
+    </div>
   </div>
 
   <div class="cover-copy">
@@ -774,8 +648,7 @@ footer strong {
   </div>
 </header>
 
-<!-- MENÚ -->
-<nav class="main-nav">
+<nav class="main-nav" aria-label="Navegación principal">
   <a href="#inicio"><i class="fa-solid fa-house"></i> Inicio</a>
   <a href="#programacion"><i class="fa-regular fa-calendar-days"></i> Programación</a>
   <a href="#podcast"><i class="fa-solid fa-microphone"></i> Podcast</a>
@@ -784,49 +657,18 @@ footer strong {
   <a href="#redes"><i class="fa-regular fa-envelope"></i> Contacto</a>
 </nav>
 
-<!-- REPRODUCTOR, SEGUIR Y CAMPANITA -->
-<section class="player-strip">
-  <div class="station-mark">
-    <i class="fa-solid fa-mug-hot"></i>
-  </div>
+<section class="player-strip" aria-label="Radio en vivo">
+  <div class="station-mark"><i class="fa-solid fa-mug-hot"></i></div>
 
   <div class="station-info">
     <strong>Café y Fe Radio</strong>
-    <span>En vivo · Transmisión prevista de 5:00 a. m. a 7:00 p. m.</span>
-
-    <div class="wave" aria-hidden="true">
-      <i style="--h:7px"></i>
-      <i style="--h:13px"></i>
-      <i style="--h:19px"></i>
-      <i style="--h:11px"></i>
-      <i style="--h:22px"></i>
-      <i style="--h:14px"></i>
-      <i style="--h:8px"></i>
-      <i style="--h:17px"></i>
-      <i style="--h:11px"></i>
-      <i style="--h:20px"></i>
-      <i style="--h:6px"></i>
-      <i style="--h:15px"></i>
-      <i style="--h:9px"></i>
-      <i style="--h:18px"></i>
-      <i style="--h:12px"></i>
-    </div>
+    <span>Transmisión prevista de 5:00 a. m. a 7:00 p. m.</span>
   </div>
 
   <div class="player-actions">
-    <button class="round-play" aria-label="Ir al reproductor"
-      onclick="document.getElementById('reproductor').scrollIntoView({behavior:'smooth'})">
+    <button class="round-play" type="button" aria-label="Ir al reproductor"
+      onclick="document.getElementById('reproductor').scrollIntoView({behavior:'smooth',block:'center'})">
       <i class="fa-solid fa-play"></i>
-    </button>
-
-    <button class="gold-btn follow-btn" onclick="openModal('followModal')">
-      <i class="fa-solid fa-user-plus"></i> Seguir
-    </button>
-
-    <button class="gold-btn bell-btn" id="bellButton"
-      aria-label="Activar avisos" title="Activar avisos"
-      onclick="enableNotifications()">
-      <i class="fa-solid fa-bell"></i>
     </button>
   </div>
 </section>
@@ -834,13 +676,8 @@ footer strong {
 <main class="page-wrap">
   <div class="content-grid">
 
-    <!-- PROGRAMACIÓN -->
     <section class="panel" id="programacion">
-      <div class="panel-head">
-        <i class="fa-regular fa-calendar-days"></i>
-        Programación de hoy
-      </div>
-
+      <div class="panel-head"><i class="fa-regular fa-calendar-days"></i> Programación de hoy</div>
       <div class="panel-body">
         <ul class="schedule-list">
           <li><time>5:00 a. m.</time><span>Oración de la mañana</span></li>
@@ -853,236 +690,144 @@ footer strong {
           <li><time>5:00 p. m.</time><span>Oración de la tarde</span></li>
           <li><time>7:00 p. m.</time><span>Fin de transmisión programada</span></li>
         </ul>
-
-        <a class="outline-btn full-link" href="#programacion">
-          <i class="fa-regular fa-calendar"></i> Ver programación completa
-        </a>
       </div>
     </section>
 
-    <!-- RADIO Y PODCAST -->
     <div>
       <section class="panel" id="reproductor">
-        <div class="panel-head">
-          <i class="fa-solid fa-headphones"></i>
-          Escucha Café y Fe Radio
-        </div>
-
+        <div class="panel-head"><i class="fa-solid fa-headphones"></i> Escucha Café y Fe Radio</div>
         <div class="panel-body">
           <p style="color:var(--muted);font-size:13px;margin-bottom:12px">
             Música católica, reflexiones y cuentos de esperanza.
           </p>
 
-          <div class="player-box">
-            <div
-              data-type="newStreamPlayer"
-              data-publicToken="547e9fb5-4710-4734-9ba1-618b5a4a8f42"
-              data-theme="dark"
-              data-color="#DDAE2B"
-              data-channelId=""
-              data-rendered="false"
-              class="cstrEmbed">
-
-              <a href="https://www.caster.fm">Shoutcast Hosting</a>
-              <a href="https://www.caster.fm">Stream Hosting</a>
-              <a href="https://www.caster.fm">Radio Server Hosting</a>
-            </div>
+          <div data-type="newStreamPlayer"
+            data-publicToken="547e9fb5-4710-4734-9ba1-618b5a4a8f42"
+            data-theme="dark"
+            data-color="#DDAE2B"
+            data-channelId=""
+            data-rendered="false"
+            class="cstrEmbed">
+            <a href="https://www.caster.fm">Caster.fm</a>
           </div>
         </div>
       </section>
 
       <section class="panel" id="podcast" style="margin-top:14px">
-        <div class="panel-head">
-          <i class="fa-solid fa-headphones-simple"></i>
-          Últimos podcast / programas
-        </div>
-
+        <div class="panel-head"><i class="fa-solid fa-headphones-simple"></i> Últimos podcast / programas</div>
         <div class="panel-body">
           <div class="podcast-grid">
             <article class="podcast-card">
               <div class="podcast-art"><i class="fa-solid fa-book-bible"></i></div>
-              <h3>Evangelio del día</h3>
-              <p>Reflexión · Próximamente</p>
+              <h3>Evangelio del día</h3><p>Reflexión · Próximamente</p>
             </article>
-
             <article class="podcast-card">
               <div class="podcast-art"><i class="fa-solid fa-guitar"></i></div>
-              <h3>Cantos para orar</h3>
-              <p>Música · Próximamente</p>
+              <h3>Cantos para orar</h3><p>Música · Próximamente</p>
             </article>
-
             <article class="podcast-card">
               <div class="podcast-art"><i class="fa-solid fa-cross"></i></div>
-              <h3>Predicación</h3>
-              <p>Fe · Próximamente</p>
+              <h3>Predicación</h3><p>Fe · Próximamente</p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- PETICIONES Y APOYO -->
       <div class="feature-grid">
         <section class="feature-card" id="oracion">
           <h3>🙏 Peticiones de oración</h3>
           <p>Comparte tus intenciones. Oremos juntos por ti.</p>
-          <a class="gold-btn"
-             href="mailto:contacto@cafeyferadio.com?subject=Peticion%20de%20oracion">
-            Dejar petición
-          </a>
+          <a class="gold-btn" href="mailto:contacto@cafeyferadio.com?subject=Peticion%20de%20oracion">Dejar petición</a>
         </section>
 
         <section class="feature-card" id="apoya">
           <h3>❤️ Apoya Café y Fe Radio</h3>
           <p>Tu apoyo ayuda a compartir mensajes de fe y esperanza.</p>
-          <button class="gold-btn" onclick="openModal('supportModal')">
-            Apoyar ahora
-          </button>
+          <button class="gold-btn" type="button" onclick="openModal('supportModal')">Apoyar ahora</button>
         </section>
       </div>
     </div>
 
-    <!-- COMENTARIOS -->
     <section class="panel community-panel" id="comunidad">
       <div class="community-intro">
         <div class="panel-head" style="padding:0 0 8px;border:0">
-          <i class="fa-solid fa-comments"></i>
-          Comentarios de la comunidad
+          <i class="fa-solid fa-comments"></i> Comentarios de la comunidad
         </div>
-
         <p>Comparte tu reflexión, saludo o testimonio con respeto y cariño.</p>
-
-        <div class="community-controls">
-          <button class="gold-btn" onclick="openModal('followModal')">
-            <i class="fa-solid fa-user-plus"></i> Seguir
-          </button>
-
-          <button class="outline-btn" onclick="enableNotifications()">
-            <i class="fa-solid fa-bell"></i> Campanita
-          </button>
-        </div>
       </div>
 
-      <!-- GISCUS: CONSERVA LOS COMENTARIOS Y REACCIONES -->
-      <div class="giscus"></div>
-
-      <script src="https://giscus.app/client.js"
-        data-repo="josepinedalucas47-byte/radio-cafe-y-fe"
-        data-repo-id="R_kgDOUeHfQg"
-        data-category="Announcements"
-        data-category-id="DIC_kwDOUeHfQs4DF2Nf"
-        data-mapping="pathname"
-        data-strict="0"
-        data-reactions-enabled="1"
-        data-emit-metadata="0"
-        data-input-position="bottom"
-        data-theme="dark"
-        data-lang="es"
-        crossorigin="anonymous"
-        async>
-      </script>
+      <div class="giscus">
+        <script src="https://giscus.app/client.js"
+          data-repo="josepinedalucas47-byte/radio-cafe-y-fe"
+          data-repo-id="R_kgDOUeHfQg"
+          data-category="Announcements"
+          data-category-id="DIC_kwDOUeHfQs4DF2Nf"
+          data-mapping="pathname"
+          data-strict="0"
+          data-reactions-enabled="1"
+          data-emit-metadata="0"
+          data-input-position="bottom"
+          data-theme="dark"
+          data-lang="es"
+          crossorigin="anonymous"
+          async>
+        </script>
+      </div>
     </section>
   </div>
 
-  <!-- REDES SOCIALES -->
   <section class="panel" id="redes" style="margin-top:16px">
-    <div class="panel-head">
-      <i class="fa-solid fa-share-nodes"></i> Síguenos en las redes
-    </div>
-
-    <div class="panel-body social-grid">
-      <a href="https://youtube.com/@lucascatolic" target="_blank" rel="noopener">
-        <i class="fa-brands fa-youtube"></i> YouTube
-      </a>
-
-      <a href="https://www.facebook.com/gotade.esperanza.14/" target="_blank" rel="noopener">
-        <i class="fa-brands fa-facebook"></i> Facebook
-      </a>
-
-      <a href="https://www.instagram.com/lucasradio/" target="_blank" rel="noopener">
-        <i class="fa-brands fa-instagram"></i> Instagram
-      </a>
+    <div class="panel-head"><i class="fa-solid fa-envelope"></i> Contacto</div>
+    <div class="panel-body">
+      <p style="color:var(--muted)">Gracias por acompañar a Café y Fe Radio.</p>
+      <a class="gold-btn" href="mailto:contacto@cafeyferadio.com">Escríbenos</a>
     </div>
   </section>
 
-  <!-- BANNER ANIMADO -->
   <div class="ticker">
-    <span>
-      ☕ Que tu día sea guiado por Dios • Fe • Esperanza • Caridad
-      • y recuerda: juntos a Jesús por María, cantando con alegría. ☕
-    </span>
+    <span>☕ Que tu día sea guiado por Dios • Fe • Esperanza • Caridad • Juntos a Jesús por María, cantando con alegría. ☕</span>
   </div>
 </main>
 
 <footer>
   <strong>☕ Café y Fe Radio</strong>
   Una pausa para el alma · Fe • Esperanza • Caridad
-  <p style="margin-top:8px">
-    © <span id="year"></span> Café y Fe Radio. Todos los derechos reservados.
-  </p>
+  <p>© <span id="year"></span> Café y Fe Radio. Todos los derechos reservados.</p>
 </footer>
 
-<!-- VENTANA: SEGUIR -->
-<div class="modal" id="followModal" role="dialog" aria-modal="true"
-     aria-labelledby="followTitle"
-     onclick="if(event.target===this)closeModal('followModal')">
-
+<div class="modal" id="followModal" role="dialog" aria-modal="true" aria-labelledby="followTitle">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('followModal')">×</button>
-
+    <button class="modal-close" type="button" aria-label="Cerrar" onclick="closeModal('followModal')">×</button>
     <h2 id="followTitle">Sigue a Café y Fe Radio</h2>
     <p>Elige una red para seguir las publicaciones y novedades.</p>
-
     <div class="modal-links">
-      <a href="https://youtube.com/@lucascatolic" target="_blank" rel="noopener">
-        <i class="fa-brands fa-youtube"></i> Suscribirme en YouTube
-      </a>
-
-      <a href="https://www.facebook.com/gotade.esperanza.14/" target="_blank" rel="noopener">
-        <i class="fa-brands fa-facebook"></i> Seguir en Facebook
-      </a>
-
-      <a href="https://www.instagram.com/lucasradio/" target="_blank" rel="noopener">
-        <i class="fa-brands fa-instagram"></i> Seguir en Instagram
-      </a>
+      <a href="https://youtube.com/@lucascatolic" target="_blank" rel="noopener">YouTube</a>
+      <a href="https://www.facebook.com/gotade.esperanza.14/" target="_blank" rel="noopener">Facebook</a>
+      <a href="https://www.instagram.com/lucasradio/" target="_blank" rel="noopener">Instagram</a>
     </div>
-
-    <p class="notice">
-      Este botón abre tus redes sociales. No crea una lista de seguidores dentro de la web.
-    </p>
+    <p>Este botón abre tus redes; no crea una lista privada de seguidores en la web.</p>
   </div>
 </div>
 
-<!-- VENTANA: LIBRO -->
-<div class="modal" id="shopModal" role="dialog" aria-modal="true"
-     aria-labelledby="shopTitle"
-     onclick="if(event.target===this)closeModal('shopModal')">
-
+<div class="modal" id="shopModal" role="dialog" aria-modal="true" aria-labelledby="shopTitle">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('shopModal')">×</button>
-    <h2 id="shopTitle">📚 Cuentos para la Vida</h2>
-    <p>Precio indicado: <strong style="color:var(--light)">$17.00</strong></p>
-    <p>La compra real requiere conectar el enlace de tu tienda o de pago.</p>
-    <button class="gold-btn" onclick="closeModal('shopModal')">Cerrar</button>
+    <button class="modal-close" type="button" aria-label="Cerrar" onclick="closeModal('shopModal')">×</button>
+    <h2 id="shopTitle">📚 Tienda Café y Fe</h2>
+    <p>Libro: Cuentos para la Vida — $17.00</p>
+    <p>La compra real requiere conectar un enlace de pago o tienda.</p>
   </div>
 </div>
 
-<!-- VENTANA: DONACIONES -->
-<div class="modal" id="supportModal" role="dialog" aria-modal="true"
-     aria-labelledby="supportTitle"
-     onclick="if(event.target===this)closeModal('supportModal')">
-
+<div class="modal" id="supportModal" role="dialog" aria-modal="true" aria-labelledby="supportTitle">
   <div class="modal-box">
-    <button class="modal-close" onclick="closeModal('supportModal')">×</button>
+    <button class="modal-close" type="button" aria-label="Cerrar" onclick="closeModal('supportModal')">×</button>
     <h2 id="supportTitle">Apoya Café y Fe Radio ❤️</h2>
-    <p>Gracias por ayudar a llevar fe, esperanza y caridad a más personas.</p>
-    <p>Para recibir donaciones, conecta aquí tu enlace de PayPal u otro servicio.</p>
-    <button class="gold-btn" onclick="closeModal('supportModal')">Cerrar</button>
+    <p>Gracias por ayudar a compartir fe, esperanza y caridad.</p>
+    <p>Cuando tengas un enlace de donación, podremos conectarlo aquí.</p>
   </div>
 </div>
 
-<!-- FUNCIONES -->
-<script src="//cdn.cloud.caster.fm//widgets/embed.js"></script>
-
+<script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
 <script>
 function openModal(id) {
   const modal = document.getElementById(id);
@@ -1093,6 +838,12 @@ function closeModal(id) {
   const modal = document.getElementById(id);
   if (modal) modal.classList.remove('open');
 }
+
+document.querySelectorAll('.modal').forEach(function(modal) {
+  modal.addEventListener('click', function(event) {
+    if (event.target === modal) modal.classList.remove('open');
+  });
+});
 
 document.addEventListener('keydown', function(event) {
   if (event.key === 'Escape') {
@@ -1105,4 +856,32 @@ document.addEventListener('keydown', function(event) {
 document.getElementById('year').textContent = new Date().getFullYear();
 
 async function enableNotifications() {
-  if (!('
+  if (!('Notification' in window)) {
+    alert('Este navegador no permite notificaciones web.');
+    return;
+  }
+
+  if (!window.isSecureContext) {
+    alert('Las notificaciones requieren una página HTTPS.');
+    return;
+  }
+
+  try {
+    const permission = await Notification.requestPermission();
+
+    if (permission === 'granted') {
+      new Notification('Café y Fe Radio', {
+        body: '¡Gracias por activar los avisos en este navegador!'
+      });
+
+      alert('Permiso concedido. Esto no activa avisos automáticos cuando la página está cerrada.');
+    } else {
+      alert('No se concedió el permiso de notificaciones.');
+    }
+  } catch (error) {
+    alert('No se pudo solicitar el permiso de notificaciones.');
+  }
+}
+</script>
+</body>
+</html>
