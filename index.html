@@ -4,103 +4,115 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#120d0a">
-<title>Café y Fe Radio | Una pausa para el alma</title>
+<meta name="theme-color" content="#120b07">
+<title>Café y Fe Radio</title>
 
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet"
+ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 :root {
-  --gold: #DDAE2B;
-  --gold-light: #F6D778;
-  --gold-pale: #ffe9ad;
-  --ink: #120d0a;
+  --gold: #d8a52b;
+  --gold-light: #ffe49a;
+  --cream: #f5d98b;
+  --bg: #120b07;
   --panel: #21150e;
-  --line: rgba(221,174,43,.6);
-  --muted: #e6d8c3;
+  --line: #8e681b;
+  --text: #fff5dc;
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
+  background: var(--bg);
+  color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
-  background: var(--ink);
-  color: #fff;
-  line-height: 1.5;
 }
 
-button, a { font: inherit; }
-button { cursor: pointer; }
-a { color: inherit; }
-
-.gold-btn, .outline-btn {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
-  padding: 10px 14px;
-  border-radius: 10px;
-  font-weight: 800;
-  text-decoration: none;
+button, a {
+  font: inherit;
 }
 
-.gold-btn {
-  background: linear-gradient(135deg,#ffe49a,#dba22a);
-  color: #21150b;
-  border: 1px solid #ffe49a;
+button {
+  cursor: pointer;
 }
 
-.outline-btn {
-  background: #120d0a;
-  color: var(--gold-pale);
-  border: 1px solid var(--gold);
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* BARRA SUPERIOR */
+/* PORTADA */
 .cover {
-  min-height: 440px;
   position: relative;
-  isolation: isolate;
-  overflow: hidden;
-  background: #28180e url("a_warm_cinematic_inspirational_catholic_themed_p.png") center/cover no-repeat;
+  min-height: 440px;
+  padding: 90px 30px 28px;
+  background:
+    linear-gradient(90deg,rgba(0,0,0,.45),rgba(0,0,0,.12)),
+    linear-gradient(0deg,rgba(18,11,7,.88),transparent 75%),
+    url("a_warm_cinematic_inspirational_catholic_themed_p.png")
+    center/cover no-repeat;
   display: flex;
   align-items: flex-end;
-  padding: 30px clamp(16px,4vw,58px) 24px;
 }
 
-.cover::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background:
-    linear-gradient(90deg,rgba(0,0,0,.55),rgba(0,0,0,.08) 60%,rgba(0,0,0,.3)),
-    linear-gradient(0deg,rgba(18,13,10,.95),transparent 70%);
+.cover-copy {
+  position: relative;
+  max-width: 720px;
 }
 
+.cover-copy h1 {
+  margin: 0;
+  color: var(--gold-light);
+  font-family: Georgia,serif;
+  font-size: clamp(42px,7vw,78px);
+  font-style: italic;
+  line-height: 1.05;
+  text-shadow: 0 4px 15px #000;
+}
+
+.cover-copy p {
+  margin: 12px 0;
+  font-family: Georgia,serif;
+  font-size: clamp(18px,2.2vw,25px);
+  font-weight: bold;
+}
+
+.cover-copy .motto {
+  color: var(--gold-light);
+  font-family: Arial,sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* BARRA SUPERIOR: COMPUTADORA */
 .topbar {
   position: absolute;
+  z-index: 10;
   top: 0;
   left: 0;
-  right: 0;
-  z-index: 5;
-  padding: 12px clamp(12px,2.5vw,32px);
+  width: 100%;
+  min-height: 60px;
+  padding: 10px 22px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
   gap: 16px;
-  flex-wrap: wrap;
-  background: rgba(16,10,8,.86);
+  background: rgba(18,11,7,.84);
   border-bottom: 1px solid var(--line);
 }
 
 .brand {
-  color: var(--gold-pale);
-  font-family: Georgia, serif;
-  font-size: clamp(17px,1.8vw,23px);
+  color: var(--gold-light);
+  font-family: Georgia,serif;
+  font-size: 21px;
   font-weight: bold;
   text-decoration: none;
   white-space: nowrap;
@@ -108,80 +120,76 @@ a { color: inherit; }
 
 .top-actions {
   display: flex;
-  align-items: center;
   justify-content: flex-end;
-  gap: 14px;
+  align-items: center;
   flex-wrap: wrap;
+  gap: 9px;
 }
 
-.top-actions a {
-  color: var(--gold-pale) !important;
-  font-size: 20px;
-  text-decoration: none;
-}
-
-.top-actions a:hover {
-  color: #fff !important;
-}
-
-.top-actions .top-label {
+.top-actions a.social-link {
   display: inline-flex;
   align-items: center;
-  gap: 7px;
-  color: var(--gold-pale) !important;
-  font-size: 14px;
-  font-weight: 700;
+  justify-content: center;
+  gap: 6px;
+  padding: 9px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #17100b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.top-actions a.youtube-link {
+  color: #ff0033 !important;
+}
+
+.top-actions a.facebook-link {
+  color: #1877f2 !important;
+}
+
+.top-actions a.instagram-link {
+  color: #e4405f !important;
+}
+
+.top-actions a.social-link:hover {
+  background: #352215;
+  border-color: var(--gold-light);
+}
+
+.top-actions a.social-link i {
+  font-size: 16px;
 }
 
 .top-actions button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
   border: 0;
+  font-weight: 800;
 }
 
+.top-actions .top-label,
 .top-actions .top-follow {
+  padding: 10px 13px;
+  border-radius: 24px;
   background: linear-gradient(135deg,#ffe49a,#dba22a);
   color: #21150b;
-  border-radius: 22px;
-  padding: 9px 14px;
-  font-weight: 800;
+  font-size: 13px;
+  white-space: nowrap;
 }
 
 .top-actions .top-bell {
   width: 40px;
   height: 40px;
+  flex-shrink: 0;
   border: 1px solid var(--gold);
   border-radius: 50%;
-  color: var(--gold-pale);
   background: #21150e;
+  color: var(--gold-light);
   font-size: 17px;
-}
-
-.cover-copy {
-  max-width: 700px;
-  padding-top: 100px;
-}
-
-.cover-copy h1 {
-  margin: 0;
-  font-family: Georgia, serif;
-  font-size: clamp(38px,7vw,78px);
-  font-style: italic;
-  line-height: 1.05;
-  color: var(--gold-pale);
-  text-shadow: 0 4px 20px #000;
-}
-
-.cover-copy p {
-  margin: 10px 0 0;
-  font-family: Georgia, serif;
-  font-size: clamp(17px,2vw,25px);
-  font-weight: bold;
-  color: #fff5df;
-}
-
-.cover-copy .motto {
-  font: 800 13px Arial, sans-serif;
-  letter-spacing: 2px;
-  color: var(--gold-pale);
 }
 
 /* MENÚ PRINCIPAL */
@@ -197,13 +205,13 @@ a { color: inherit; }
 
 .main-nav a {
   flex: 1 1 130px;
-  text-align: center;
-  text-decoration: none;
   padding: 12px 8px;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #17100b;
-  color: var(--gold-pale) !important;
+  color: var(--gold-light) !important;
+  text-align: center;
+  text-decoration: none;
   font-size: 15px;
   font-weight: 800;
 }
@@ -213,9 +221,11 @@ a { color: inherit; }
   color: #21150b !important;
 }
 
-.main-nav a:hover { background: #3a2614; }
+.main-nav a:hover {
+  background-color: #3b2918;
+}
 
-/* REPRODUCTOR Y BOTONES */
+/* BARRA DEL REPRODUCTOR */
 .player-strip {
   max-width: 1400px;
   margin: 0 auto;
@@ -236,9 +246,9 @@ a { color: inherit; }
   place-items: center;
   border: 1px solid var(--line);
   border-radius: 12px;
-  color: var(--gold-pale);
-  font-size: 29px;
   background: #30200f;
+  color: var(--gold-light);
+  font-size: 29px;
 }
 
 .station-info strong {
@@ -248,13 +258,14 @@ a { color: inherit; }
 }
 
 .station-info span {
-  color: var(--muted);
+  color: #e6d8c3;
   font-size: 13px;
 }
 
 .player-actions {
   display: flex;
   align-items: center;
+  justify-content: center;
   gap: 10px;
 }
 
@@ -268,14 +279,7 @@ a { color: inherit; }
   font-size: 20px;
 }
 
-.bell-btn {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  font-size: 19px;
-  padding: 0;
-}
-
+/* CONTENIDO */
 .page-wrap {
   max-width: 1440px;
   margin: 22px auto;
@@ -284,9 +288,11 @@ a { color: inherit; }
 
 .content-grid {
   display: grid;
-  grid-template-columns: minmax(250px,.9fr) minmax(300px,1.45fr) minmax(260px,1fr);
-  gap: 14px;
+  grid-template-columns: minmax(240px,.9fr)
+                         minmax(300px,1.45fr)
+                         minmax(250px,1fr);
   align-items: start;
+  gap: 14px;
 }
 
 .panel {
@@ -308,13 +314,18 @@ a { color: inherit; }
   font-weight: 800;
 }
 
-.panel-head i { color: var(--gold); }
-.panel-body { padding: 14px; }
+.panel-head i {
+  color: var(--gold);
+}
+
+.panel-body {
+  padding: 14px;
+}
 
 .schedule-list {
   list-style: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 .schedule-list li {
@@ -348,9 +359,9 @@ a { color: inherit; }
   min-height: 95px;
   display: grid;
   place-items: center;
-  color: var(--gold-pale);
-  font-size: 30px;
   background: linear-gradient(135deg,#64401d,#16100b);
+  color: var(--gold-light);
+  font-size: 30px;
 }
 
 .podcast-card h3 {
@@ -360,7 +371,7 @@ a { color: inherit; }
 
 .podcast-card p {
   padding: 0 8px 10px;
-  color: var(--muted);
+  color: #e6d8c3;
   font-size: 11px;
 }
 
@@ -379,17 +390,29 @@ a { color: inherit; }
 }
 
 .feature-card h3 {
-  color: var(--gold-pale);
+  color: var(--gold-light);
   font-family: Georgia,serif;
   font-size: 17px;
 }
 
 .feature-card p {
-  color: var(--muted);
+  color: #e6d8c3;
   font-size: 13px;
 }
 
-.community-panel { grid-column: auto; }
+.gold-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border: 1px solid var(--gold-light);
+  border-radius: 10px;
+  background: linear-gradient(135deg,#ffe49a,#dba22a);
+  color: #21150b;
+  font-weight: 800;
+  text-decoration: none;
+}
 
 .community-intro {
   padding: 14px;
@@ -397,13 +420,13 @@ a { color: inherit; }
 }
 
 .community-intro p {
-  color: var(--muted);
+  color: #e6d8c3;
   font-size: 13px;
 }
 
 .giscus {
-  padding: 12px;
   min-width: 0;
+  padding: 12px;
 }
 
 .social-grid {
@@ -415,12 +438,12 @@ a { color: inherit; }
 .social-grid a {
   flex: 1 1 110px;
   padding: 11px;
-  text-align: center;
-  text-decoration: none;
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #160f0b;
-  color: var(--gold-pale) !important;
+  color: var(--gold-light) !important;
+  text-align: center;
+  text-decoration: none;
   font-weight: 700;
 }
 
@@ -448,17 +471,17 @@ a { color: inherit; }
 
 footer {
   padding: 24px 18px;
-  text-align: center;
   border-top: 1px solid var(--line);
   background: #090706;
-  color: var(--muted);
+  color: #e6d8c3;
+  text-align: center;
   font-size: 13px;
 }
 
 footer strong {
   display: block;
   margin-bottom: 5px;
-  color: var(--gold-pale);
+  color: var(--gold-light);
   font: bold 20px Georgia,serif;
 }
 
@@ -475,7 +498,9 @@ footer strong {
   background: #050302ed;
 }
 
-.modal.open { display: flex; }
+.modal.open {
+  display: flex;
+}
 
 .modal-box {
   width: min(100%,520px);
@@ -487,11 +512,13 @@ footer strong {
 }
 
 .modal-box h2 {
-  color: var(--gold-pale);
+  color: var(--gold-light);
   font-family: Georgia,serif;
 }
 
-.modal-box p { color: var(--muted); }
+.modal-box p {
+  color: #e6d8c3;
+}
 
 .modal-close {
   float: right;
@@ -513,15 +540,29 @@ footer strong {
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #3a2515;
-  color: var(--gold-pale);
+  color: var(--gold-light);
   text-decoration: none;
   font-weight: bold;
 }
 
+/* PANTALLAS MEDIANAS */
+@media (max-width: 1050px) {
+  .content-grid {
+    grid-template-columns: repeat(2,minmax(0,1fr));
+  }
 
-@media(max-width:650px) {
+  .community-panel {
+    grid-column: 1 / -1;
+  }
+}
+
+/* CELULAR: ÚNICO BLOQUE RESPONSIVE */
+@media (max-width: 650px) {
   .topbar {
     position: relative;
+    top: auto;
+    left: auto;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -545,9 +586,6 @@ footer strong {
   }
 
   .top-actions a.social-link {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     gap: 4px;
     padding: 7px 8px;
     font-size: 12px;
@@ -557,10 +595,7 @@ footer strong {
     font-size: 14px;
   }
 
-  .top-actions .top-label {
-    font-size: 12px;
-  }
-
+  .top-actions .top-label,
   .top-actions .top-follow {
     padding: 8px 10px;
     font-size: 12px;
@@ -569,12 +604,11 @@ footer strong {
   .top-actions .top-bell {
     width: 35px;
     height: 35px;
-    flex-shrink: 0;
   }
 
   .cover {
     min-height: 340px;
-    padding: 28px 16px;
+    padding: 28px 16px 20px;
     background-position: center;
   }
 
@@ -624,7 +658,7 @@ footer strong {
   }
 
   .player-actions {
-    grid-column: 1/-1;
+    grid-column: 1 / -1;
     justify-content: center;
     flex-wrap: wrap;
   }
@@ -663,90 +697,10 @@ footer strong {
   }
 }
 
-
-
-  .cover {
-    min-height: 340px;
-    padding: 20px 16px;
-    background-position: center;
-  }
-
-  .cover-copy { padding-top: 10px; }
-
-  .cover-copy h1 { font-size: clamp(36px,11vw,55px); }
-
-  .cover-copy p { font-size: 17px; }
-
-  .main-nav { padding: 8px; gap: 6px; }
-
-  .main-nav a {
-    flex: 1 1 calc(50% - 6px);
-    min-width: 0;
-    padding: 10px 5px;
-    font-size: 13px;
-  }
-
-  .player-strip {
-    grid-template-columns: 48px minmax(0,1fr);
-    gap: 10px;
-    margin: 0 8px;
-    padding: 12px;
-  }
-
-  .station-mark { width: 46px; height: 46px; font-size: 21px; }
-  .station-info strong { font-size: 15px; }
-  .station-info span { font-size: 11px; }
-
-  .player-actions {
-    grid-column: 1/-1;
-    justify-content: center;
-    flex-wrap: wrap;
-  }
-
-  .page-wrap { padding: 0 10px; }
-
-  .content-grid { grid-template-columns: 1fr; }
-
-  .community-panel { grid-column: auto; }
-
-  .podcast-art { min-height: 75px; font-size: 24px; }
-
-  .podcast-card h3 { font-size: 11px; }
-
-  .podcast-card p { font-size: 10px; }
-
-  .feature-grid { grid-template-columns: 1fr; }
-
-  .schedule-list li { grid-template-columns: 82px 1fr; }
-}
-
-@media(prefers-reduced-motion:reduce) {
+@media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .ticker span { animation: none; }
 }
-  
-.top-actions a.social-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 8px 10px;
-  border: 1px solid var(--line);
-  border-radius: 9px;
-  background: #17100b;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 800;
-  white-space: nowrap;
-}
-
-.top-actions a.youtube-link { color: #FF0033 !important; }
-.top-actions a.facebook-link { color: #1877F2 !important; }
-.top-actions a.instagram-link { color: #E4405F !important; }
-
-.top-actions a.social-link i {
-  font-size: 16px;
-}
-
 </style>
 </head>
 
@@ -757,38 +711,34 @@ footer strong {
     <a class="brand" href="#inicio">☕ Café y Fe RADIO</a>
 
     <div class="top-actions" aria-label="Accesos rápidos">
-      <button class="top-follow top-label" type="button" onclick="openModal('shopModal')">
+      <button class="top-label" type="button" onclick="openModal('shopModal')">
         <i class="fa-solid fa-store"></i> Tienda
       </button>
 
-     
-<a class="social-link youtube-link"
-   href="https://youtube.com/@lucascatolic"
-   target="_blank" rel="noopener" aria-label="YouTube">
-  <i class="fa-brands fa-youtube"></i>
-  <span>YouTube</span>
-</a>
+      <a class="social-link youtube-link"
+         href="https://youtube.com/@lucascatolic"
+         target="_blank" rel="noopener" aria-label="YouTube">
+        <i class="fa-brands fa-youtube"></i><span>YouTube</span>
+      </a>
 
-<a class="social-link facebook-link"
-   href="https://www.facebook.com/gotade.esperanza.14/"
-   target="_blank" rel="noopener" aria-label="Facebook">
-  <i class="fa-brands fa-facebook"></i>
-  <span>Facebook</span>
-</a>
+      <a class="social-link facebook-link"
+         href="https://www.facebook.com/gotade.esperanza.14/"
+         target="_blank" rel="noopener" aria-label="Facebook">
+        <i class="fa-brands fa-facebook"></i><span>Facebook</span>
+      </a>
 
-<a class="social-link instagram-link"
-   href="https://www.instagram.com/lucasradio/"
-   target="_blank" rel="noopener" aria-label="Instagram">
-  <i class="fa-brands fa-instagram"></i>
-  <span>Instagram</span>
-</a>
-
+      <a class="social-link instagram-link"
+         href="https://www.instagram.com/lucasradio/"
+         target="_blank" rel="noopener" aria-label="Instagram">
+        <i class="fa-brands fa-instagram"></i><span>Instagram</span>
+      </a>
 
       <button class="top-follow" type="button" onclick="openModal('followModal')">
         <i class="fa-solid fa-user-plus"></i> Seguir
       </button>
 
-      <button class="top-bell" type="button" onclick="enableNotifications()" aria-label="Activar notificaciones" title="Notificaciones">
+      <button class="top-bell" type="button" onclick="enableNotifications()"
+              aria-label="Activar notificaciones" title="Notificaciones">
         <i class="fa-solid fa-bell"></i>
       </button>
     </div>
@@ -850,8 +800,8 @@ footer strong {
       <section class="panel" id="reproductor">
         <div class="panel-head"><i class="fa-solid fa-headphones"></i> Escucha Café y Fe Radio</div>
         <div class="panel-body">
-          <p style="color:var(--muted);font-size:13px;margin-bottom:12px">
-            Música católica, reflexiones y cuentos de esperanza.
+          <p style="color:var(--text);font-size:13px">
+            Música católica, reflexiones y mensajes de esperanza.
           </p>
 
           <div data-type="newStreamPlayer"
@@ -859,7 +809,6 @@ footer strong {
             data-theme="dark"
             data-color="#DDAE2B"
             data-channelId=""
-            data-rendered="false"
             class="cstrEmbed">
             <a href="https://www.caster.fm">Caster.fm</a>
           </div>
@@ -867,20 +816,23 @@ footer strong {
       </section>
 
       <section class="panel" id="podcast" style="margin-top:14px">
-        <div class="panel-head"><i class="fa-solid fa-headphones-simple"></i> Últimos podcast / programas</div>
+        <div class="panel-head"><i class="fa-solid fa-headphones-simple"></i> Podcast y programas</div>
         <div class="panel-body">
           <div class="podcast-grid">
             <article class="podcast-card">
               <div class="podcast-art"><i class="fa-solid fa-book-bible"></i></div>
-              <h3>Evangelio del día</h3><p>Reflexión · Próximamente</p>
+              <h3>Evangelio del día</h3>
+              <p>Reflexiones</p>
             </article>
             <article class="podcast-card">
               <div class="podcast-art"><i class="fa-solid fa-guitar"></i></div>
-              <h3>Cantos para orar</h3><p>Música · Próximamente</p>
+              <h3>Cantos para orar</h3>
+              <p>Música católica</p>
             </article>
             <article class="podcast-card">
               <div class="podcast-art"><i class="fa-solid fa-cross"></i></div>
-              <h3>Predicación</h3><p>Fe · Próximamente</p>
+              <h3>Predicación</h3>
+              <p>Fe y esperanza</p>
             </article>
           </div>
         </div>
@@ -890,13 +842,17 @@ footer strong {
         <section class="feature-card" id="oracion">
           <h3>🙏 Peticiones de oración</h3>
           <p>Comparte tus intenciones. Oremos juntos por ti.</p>
-          <a class="gold-btn" href="mailto:contacto@cafeyferadio.com?subject=Peticion%20de%20oracion">Dejar petición</a>
+          <a class="gold-btn" href="mailto:contacto@cafeyferadio.com?subject=Peticion%20de%20oracion">
+            Dejar petición
+          </a>
         </section>
 
         <section class="feature-card" id="apoya">
           <h3>❤️ Apoya Café y Fe Radio</h3>
           <p>Tu apoyo ayuda a compartir mensajes de fe y esperanza.</p>
-          <button class="gold-btn" type="button" onclick="openModal('supportModal')">Apoyar ahora</button>
+          <button class="gold-btn" type="button" onclick="openModal('supportModal')">
+            Apoyar ahora
+          </button>
         </section>
       </div>
     </div>
@@ -932,7 +888,7 @@ footer strong {
   <section class="panel" id="redes" style="margin-top:16px">
     <div class="panel-head"><i class="fa-solid fa-envelope"></i> Contacto</div>
     <div class="panel-body">
-      <p style="color:var(--muted)">Gracias por acompañar a Café y Fe Radio.</p>
+      <p>Gracias por acompañar a Café y Fe Radio.</p>
       <a class="gold-btn" href="mailto:contacto@cafeyferadio.com">Escríbenos</a>
     </div>
   </section>
@@ -952,13 +908,12 @@ footer strong {
   <div class="modal-box">
     <button class="modal-close" type="button" aria-label="Cerrar" onclick="closeModal('followModal')">×</button>
     <h2 id="followTitle">Sigue a Café y Fe Radio</h2>
-    <p>Elige una red para seguir las publicaciones y novedades.</p>
+    <p>Elige una red para ver nuestras publicaciones.</p>
     <div class="modal-links">
       <a href="https://youtube.com/@lucascatolic" target="_blank" rel="noopener">YouTube</a>
       <a href="https://www.facebook.com/gotade.esperanza.14/" target="_blank" rel="noopener">Facebook</a>
       <a href="https://www.instagram.com/lucasradio/" target="_blank" rel="noopener">Instagram</a>
     </div>
-    <p>Este botón abre tus redes; no crea una lista privada de seguidores en la web.</p>
   </div>
 </div>
 
@@ -967,7 +922,7 @@ footer strong {
     <button class="modal-close" type="button" aria-label="Cerrar" onclick="closeModal('shopModal')">×</button>
     <h2 id="shopTitle">📚 Tienda Café y Fe</h2>
     <p>Libro: Cuentos para la Vida — $17.00</p>
-    <p>La compra real requiere conectar un enlace de pago o tienda.</p>
+    <p>Para comprar, será necesario conectar el enlace de pago o la tienda.</p>
   </div>
 </div>
 
@@ -975,8 +930,8 @@ footer strong {
   <div class="modal-box">
     <button class="modal-close" type="button" aria-label="Cerrar" onclick="closeModal('supportModal')">×</button>
     <h2 id="supportTitle">Apoya Café y Fe Radio ❤️</h2>
-    <p>Gracias por ayudar a compartir fe, esperanza y caridad.</p>
-    <p>Cuando tengas un enlace de donación, podremos conectarlo aquí.</p>
+    <p>Gracias por ayudarnos a compartir fe, esperanza y caridad.</p>
+    <p>El botón queda listo para conectar tu enlace de donaciones.</p>
   </div>
 </div>
 
@@ -1026,7 +981,6 @@ async function enableNotifications() {
       new Notification('Café y Fe Radio', {
         body: '¡Gracias por activar los avisos en este navegador!'
       });
-
       alert('Permiso concedido. Esto no activa avisos automáticos cuando la página está cerrada.');
     } else {
       alert('No se concedió el permiso de notificaciones.');
