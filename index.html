@@ -667,6 +667,62 @@ footer strong {
   html { scroll-behavior: auto; }
   .ticker span { animation: none; }
 }
+ 
+/* Accesos rápidos de la barra superior */
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.top-socials {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+.top-socials a,
+.top-socials button {
+  color: #f5d98b;
+  font-size: 18px;
+  text-decoration: none;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+.top-socials .top-follow {
+  background: linear-gradient(135deg, #ffe49a, #dba22a);
+  color: #241606;
+  padding: 9px 14px;
+  border-radius: 20px;
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.top-socials a:hover,
+.top-socials button:hover {
+  color: #ffffff;
+}
+
+@media (max-width: 600px) {
+  .topbar {
+    gap: 10px;
+  }
+
+  .top-socials {
+    gap: 10px;
+  }
+
+  .top-socials a,
+  .top-socials button {
+    font-size: 16px;
+  }
+}
+ 
 </style>
 </head>
 
@@ -687,22 +743,28 @@ footer strong {
   <div class="topbar">
     <a class="brand" href="#inicio">☕ Café y Fe RADIO</a>
 
-    <div class="top-socials">
-      <a class="yt" href="https://youtube.com/@lucascatolic"
-         target="_blank" rel="noopener" aria-label="YouTube">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
+   
+<div class="top-socials" aria-label="Redes sociales y accesos rápidos">
+  <a href="#tienda" aria-label="Tienda" title="Tienda">
+    <i class="fa-solid fa-store"></i>
+  </a>
+  <a href="https://youtube.com/@lucascatolic" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
+    <i class="fa-brands fa-youtube"></i>
+  </a>
+  <a href="https://www.facebook.com/gotade.esperanza.14/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
+    <i class="fa-brands fa-facebook"></i>
+  </a>
+  <a href="https://www.instagram.com/lucasradio/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
+    <i class="fa-brands fa-instagram"></i>
+  </a>
+  <button type="button" class="top-follow" onclick="openModal('followModal')">
+    <i class="fa-solid fa-user-plus"></i> Seguir
+  </button>
+  <button type="button" class="top-bell" id="topBellButton" onclick="enableNotifications()" aria-label="Activar notificaciones" title="Notificaciones">
+    <i class="fa-solid fa-bell"></i>
+  </button>
+</div>
 
-      <a class="fb" href="https://www.facebook.com/gotade.esperanza.14/"
-         target="_blank" rel="noopener" aria-label="Facebook">
-        <i class="fa-brands fa-facebook"></i>
-      </a>
-
-      <a class="ig" href="https://www.instagram.com/lucasradio/"
-         target="_blank" rel="noopener" aria-label="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
-    </div>
   </div>
 
   <div class="cover-copy">
