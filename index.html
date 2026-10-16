@@ -708,9 +708,29 @@ data-color="#DDAE2B"
   <!-- COMUNIDAD -->
   <section class="community-card">
 
-    <h2>
-      💬 Comunidad Café y Fe
-    </h2>
+  
+<div style="display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:20px;">
+  <h2 style="margin:0;color:#DDAE2B;font-size:26px;">
+    💬 Comunidad Café y Fe
+  </h2>
+
+  <div style="display:flex;gap:10px;flex-wrap:wrap;">
+    <button id="seguirCafeFe"
+      onclick="const b=this;const activo=b.dataset.activo==='si';b.dataset.activo=activo?'no':'si';b.textContent=activo?'＋ Seguir':'✓ Siguiendo';"
+      data-activo="no"
+      style="background:#DDAE2B;color:#21150f;border:2px solid #F6D778;border-radius:24px;padding:12px 18px;font-size:15px;font-weight:bold;cursor:pointer;">
+      ＋ Seguir
+    </button>
+
+    <button id="campanaCafeFe"
+      onclick="const b=this;const activo=b.dataset.activo==='si';b.dataset.activo=activo?'no':'si';b.textContent=activo?'🔔 Activar avisos':'🔔 Avisos activados';"
+      data-activo="no"
+      style="background:#DDAE2B;color:#21150f;border:2px solid #F6D778;border-radius:24px;padding:12px 18px;font-size:15px;font-weight:bold;cursor:pointer;">
+      🔔 Activar avisos
+    </button>
+  </div>
+</div>
+
 
     <p style="margin-bottom:20px;">
       Déjanos tu mensaje, reflexión o saludo.
