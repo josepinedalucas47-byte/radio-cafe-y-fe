@@ -605,6 +605,29 @@ footer strong {
   html { scroll-behavior: auto; }
   .ticker span { animation: none; }
 }
+  
+.top-actions a.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #17100b;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.top-actions a.youtube-link { color: #FF0033 !important; }
+.top-actions a.facebook-link { color: #1877F2 !important; }
+.top-actions a.instagram-link { color: #E4405F !important; }
+
+.top-actions a.social-link i {
+  font-size: 16px;
+}
+
 </style>
 </head>
 
@@ -619,17 +642,28 @@ footer strong {
         <i class="fa-solid fa-store"></i> Tienda
       </button>
 
-      <a href="https://youtube.com/@lucascatolic" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube">
-        <i class="fa-brands fa-youtube"></i>
-      </a>
+     
+<a class="social-link youtube-link"
+   href="https://youtube.com/@lucascatolic"
+   target="_blank" rel="noopener" aria-label="YouTube">
+  <i class="fa-brands fa-youtube"></i>
+  <span>YouTube</span>
+</a>
 
-      <a href="https://www.facebook.com/gotade.esperanza.14/" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook">
-        <i class="fa-brands fa-facebook"></i>
-      </a>
+<a class="social-link facebook-link"
+   href="https://www.facebook.com/gotade.esperanza.14/"
+   target="_blank" rel="noopener" aria-label="Facebook">
+  <i class="fa-brands fa-facebook"></i>
+  <span>Facebook</span>
+</a>
 
-      <a href="https://www.instagram.com/lucasradio/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram">
-        <i class="fa-brands fa-instagram"></i>
-      </a>
+<a class="social-link instagram-link"
+   href="https://www.instagram.com/lucasradio/"
+   target="_blank" rel="noopener" aria-label="Instagram">
+  <i class="fa-brands fa-instagram"></i>
+  <span>Instagram</span>
+</a>
+
 
       <button class="top-follow" type="button" onclick="openModal('followModal')">
         <i class="fa-solid fa-user-plus"></i> Seguir
