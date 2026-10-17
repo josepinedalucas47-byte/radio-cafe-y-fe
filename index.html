@@ -7,8 +7,7 @@
 <meta name="theme-color" content="#120b07">
 <title>Café y Fe Radio</title>
 
-<link rel="stylesheet"
- href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
 <style>
 :root {
@@ -21,32 +20,20 @@
   --text: #fff5dc;
 }
 
-* {
-  box-sizing: border-box;
-}
+* { box-sizing: border-box; }
 
-html {
-  scroll-behavior: smooth;
-}
+html { scroll-behavior: smooth; }
 
 body {
   margin: 0;
   background: var(--bg);
   color: var(--text);
   font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.5;
 }
 
-button, a {
-  font: inherit;
-}
-
-button {
-  cursor: pointer;
-}
-
-a {
-  -webkit-tap-highlight-color: transparent;
-}
+button, a { font: inherit; }
+button { cursor: pointer; }
 
 /* PORTADA */
 .cover {
@@ -62,36 +49,6 @@ a {
   align-items: flex-end;
 }
 
-.cover-copy {
-  position: relative;
-  max-width: 720px;
-}
-
-.cover-copy h1 {
-  margin: 0;
-  color: var(--gold-light);
-  font-family: Georgia,serif;
-  font-size: clamp(42px,7vw,78px);
-  font-style: italic;
-  line-height: 1.05;
-  text-shadow: 0 4px 15px #000;
-}
-
-.cover-copy p {
-  margin: 12px 0;
-  font-family: Georgia,serif;
-  font-size: clamp(18px,2.2vw,25px);
-  font-weight: bold;
-}
-
-.cover-copy .motto {
-  color: var(--gold-light);
-  font-family: Arial,sans-serif;
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 2px;
-}
-
 /* BARRA SUPERIOR: COMPUTADORA */
 .topbar {
   position: absolute;
@@ -105,13 +62,13 @@ a {
   justify-content: space-between;
   align-items: center;
   gap: 16px;
-  background: rgba(18,11,7,.84);
+  background: rgba(18,11,7,.88);
   border-bottom: 1px solid var(--line);
 }
 
 .brand {
   color: var(--gold-light);
-  font-family: Georgia,serif;
+  font-family: Georgia, serif;
   font-size: 21px;
   font-weight: bold;
   text-decoration: none;
@@ -123,7 +80,7 @@ a {
   justify-content: flex-end;
   align-items: center;
   flex-wrap: wrap;
-  gap: 9px;
+  gap: 8px;
 }
 
 .top-actions a.social-link {
@@ -131,7 +88,7 @@ a {
   align-items: center;
   justify-content: center;
   gap: 6px;
-  padding: 9px 10px;
+  padding: 8px 10px;
   border: 1px solid var(--line);
   border-radius: 9px;
   background: #17100b;
@@ -141,26 +98,16 @@ a {
   white-space: nowrap;
 }
 
-.top-actions a.youtube-link {
-  color: #ff0033 !important;
-}
-
-.top-actions a.facebook-link {
-  color: #1877f2 !important;
-}
-
-.top-actions a.instagram-link {
-  color: #e4405f !important;
-}
+.top-actions .youtube-link { color: #ff0033; }
+.top-actions .facebook-link { color: #1877f2; }
+.top-actions .instagram-link { color: #e4405f; }
 
 .top-actions a.social-link:hover {
   background: #352215;
   border-color: var(--gold-light);
 }
 
-.top-actions a.social-link i {
-  font-size: 16px;
-}
+.top-actions a.social-link i { font-size: 16px; }
 
 .top-actions button {
   display: inline-flex;
@@ -171,9 +118,8 @@ a {
   font-weight: 800;
 }
 
-.top-actions .top-label,
-.top-actions .top-follow {
-  padding: 10px 13px;
+.top-label, .top-follow {
+  padding: 9px 12px;
   border-radius: 24px;
   background: linear-gradient(135deg,#ffe49a,#dba22a);
   color: #21150b;
@@ -181,9 +127,9 @@ a {
   white-space: nowrap;
 }
 
-.top-actions .top-bell {
-  width: 40px;
-  height: 40px;
+.top-bell {
+  width: 39px;
+  height: 39px;
   flex-shrink: 0;
   border: 1px solid var(--gold);
   border-radius: 50%;
@@ -192,7 +138,35 @@ a {
   font-size: 17px;
 }
 
-/* MENÚ PRINCIPAL */
+/* TEXTO DE PORTADA */
+.cover-copy { max-width: 720px; }
+
+.cover-copy h1 {
+  margin: 0;
+  color: var(--gold-light);
+  font-family: Georgia, serif;
+  font-size: clamp(42px,7vw,78px);
+  font-style: italic;
+  line-height: 1.05;
+  text-shadow: 0 4px 15px #000;
+}
+
+.cover-copy p {
+  margin: 12px 0;
+  font-family: Georgia, serif;
+  font-size: clamp(18px,2.2vw,25px);
+  font-weight: bold;
+}
+
+.cover-copy .motto {
+  color: var(--gold-light);
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+/* MENÚ */
 .main-nav {
   display: flex;
   flex-wrap: wrap;
@@ -209,7 +183,7 @@ a {
   border: 1px solid var(--line);
   border-radius: 10px;
   background: #17100b;
-  color: var(--gold-light) !important;
+  color: var(--gold-light);
   text-align: center;
   text-decoration: none;
   font-size: 15px;
@@ -218,14 +192,10 @@ a {
 
 .main-nav a:first-child {
   background: linear-gradient(135deg,#ffe49a,#dba22a);
-  color: #21150b !important;
+  color: #21150b;
 }
 
-.main-nav a:hover {
-  background-color: #3b2918;
-}
-
-/* BARRA DEL REPRODUCTOR */
+/* TARJETA DE ESTACIÓN */
 .player-strip {
   max-width: 1400px;
   margin: 0 auto;
@@ -253,20 +223,13 @@ a {
 
 .station-info strong {
   display: block;
-  font-family: Georgia,serif;
+  font-family: Georgia, serif;
   font-size: 18px;
 }
 
 .station-info span {
   color: #e6d8c3;
   font-size: 13px;
-}
-
-.player-actions {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
 }
 
 .round-play {
@@ -314,13 +277,8 @@ a {
   font-weight: 800;
 }
 
-.panel-head i {
-  color: var(--gold);
-}
-
-.panel-body {
-  padding: 14px;
-}
+.panel-head i { color: var(--gold); }
+.panel-body { padding: 14px; }
 
 .schedule-list {
   list-style: none;
@@ -364,16 +322,8 @@ a {
   font-size: 30px;
 }
 
-.podcast-card h3 {
-  padding: 8px 8px 2px;
-  font-size: 13px;
-}
-
-.podcast-card p {
-  padding: 0 8px 10px;
-  color: #e6d8c3;
-  font-size: 11px;
-}
+.podcast-card h3 { padding: 8px 8px 2px; font-size: 13px; }
+.podcast-card p { padding: 0 8px 10px; color: #e6d8c3; font-size: 11px; }
 
 .feature-grid {
   display: grid;
@@ -391,14 +341,11 @@ a {
 
 .feature-card h3 {
   color: var(--gold-light);
-  font-family: Georgia,serif;
+  font-family: Georgia, serif;
   font-size: 17px;
 }
 
-.feature-card p {
-  color: #e6d8c3;
-  font-size: 13px;
-}
+.feature-card p { color: #e6d8c3; font-size: 13px; }
 
 .gold-btn {
   display: inline-flex;
@@ -414,38 +361,9 @@ a {
   text-decoration: none;
 }
 
-.community-intro {
-  padding: 14px;
-  border-bottom: 1px solid #d8a52b44;
-}
-
-.community-intro p {
-  color: #e6d8c3;
-  font-size: 13px;
-}
-
-.giscus {
-  min-width: 0;
-  padding: 12px;
-}
-
-.social-grid {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 9px;
-}
-
-.social-grid a {
-  flex: 1 1 110px;
-  padding: 11px;
-  border: 1px solid var(--line);
-  border-radius: 10px;
-  background: #160f0b;
-  color: var(--gold-light) !important;
-  text-align: center;
-  text-decoration: none;
-  font-weight: 700;
-}
+.community-intro { padding: 14px; border-bottom: 1px solid #d8a52b44; }
+.community-intro p { color: #e6d8c3; font-size: 13px; }
+.giscus { min-width: 0; padding: 12px; }
 
 .ticker {
   overflow: hidden;
@@ -498,9 +416,7 @@ footer strong {
   background: #050302ed;
 }
 
-.modal.open {
-  display: flex;
-}
+.modal.open { display: flex; }
 
 .modal-box {
   width: min(100%,520px);
@@ -511,14 +427,8 @@ footer strong {
   text-align: center;
 }
 
-.modal-box h2 {
-  color: var(--gold-light);
-  font-family: Georgia,serif;
-}
-
-.modal-box p {
-  color: #e6d8c3;
-}
+.modal-box h2 { color: var(--gold-light); font-family: Georgia,serif; }
+.modal-box p { color: #e6d8c3; }
 
 .modal-close {
   float: right;
@@ -530,10 +440,7 @@ footer strong {
   color: white;
 }
 
-.modal-links {
-  display: grid;
-  gap: 10px;
-}
+.modal-links { display: grid; gap: 10px; }
 
 .modal-links a {
   padding: 12px;
@@ -545,89 +452,77 @@ footer strong {
   font-weight: bold;
 }
 
-/* PANTALLAS MEDIANAS */
-@media (max-width: 1050px) {
-  .content-grid {
-    grid-template-columns: repeat(2,minmax(0,1fr));
-  }
-
-  .community-panel {
-    grid-column: 1 / -1;
-  }
+/* TABLET */
+@media (max-width:1050px) {
+  .content-grid { grid-template-columns: repeat(2,minmax(0,1fr)); }
+  .community-panel { grid-column: 1 / -1; }
 }
 
-/* CELULAR: ÚNICO BLOQUE RESPONSIVE */
-@media (max-width: 650px) {
+/* CELULAR: NO MODIFICA EL DISEÑO DE COMPUTADORA */
+@media (max-width:650px) {
+  .cover {
+    min-height: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    background-position: center;
+  }
+
   .topbar {
     position: relative;
     top: auto;
     left: auto;
     width: 100%;
+    padding: 10px 8px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 10px;
-    padding: 10px 8px;
   }
 
   .brand {
     font-size: 18px;
-    white-space: nowrap;
+    white-space: normal;
+    text-align: center;
   }
 
   .top-actions {
+    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     gap: 6px;
-    width: 100%;
   }
 
   .top-actions a.social-link {
-    gap: 4px;
     padding: 7px 8px;
+    gap: 4px;
     font-size: 12px;
   }
 
-  .top-actions a.social-link i {
-    font-size: 14px;
-  }
+  .top-actions a.social-link i { font-size: 14px; }
 
-  .top-actions .top-label,
-  .top-actions .top-follow {
+  .top-label, .top-follow {
     padding: 8px 10px;
     font-size: 12px;
   }
 
-  .top-actions .top-bell {
-    width: 35px;
-    height: 35px;
-  }
-
-  .cover {
-    min-height: 340px;
-    padding: 28px 16px 20px;
-    background-position: center;
-  }
+  .top-bell { width: 35px; height: 35px; }
 
   .cover-copy {
-    padding-top: 10px;
+    width: 100%;
+    padding: 28px 18px 22px;
+    text-align: center;
   }
 
-  .cover-copy h1 {
-    font-size: clamp(36px,11vw,55px);
-  }
+  .cover-copy h1 { font-size: clamp(38px,11vw,55px); }
+  .cover-copy p { font-size: 17px; }
+  .cover-copy .motto { font-size: 12px; letter-spacing: 1.5px; }
 
-  .cover-copy p {
-    font-size: 17px;
-  }
-
-  .main-nav {
-    padding: 8px;
-    gap: 6px;
-  }
+  .main-nav { padding: 8px; gap: 6px; }
 
   .main-nav a {
     flex: 1 1 calc(50% - 6px);
@@ -643,61 +538,30 @@ footer strong {
     padding: 12px;
   }
 
-  .station-mark {
-    width: 46px;
-    height: 46px;
-    font-size: 21px;
-  }
+  .station-mark { width: 46px; height: 46px; font-size: 21px; }
+  .station-info strong { font-size: 15px; }
+  .station-info span { font-size: 11px; }
 
-  .station-info strong {
-    font-size: 15px;
-  }
-
-  .station-info span {
-    font-size: 11px;
-  }
-
-  .player-actions {
+  .player-strip .round-play {
     grid-column: 1 / -1;
-    justify-content: center;
-    flex-wrap: wrap;
+    justify-self: center;
   }
 
-  .page-wrap {
-    padding: 0 10px;
-  }
+  .page-wrap { padding: 0 10px; }
+  .content-grid { grid-template-columns: minmax(0,1fr); }
+  .community-panel { grid-column: auto; }
+  .podcast-art { min-height: 75px; font-size: 24px; }
+  .podcast-card h3 { font-size: 11px; }
+  .podcast-card p { font-size: 10px; }
+  .feature-grid { grid-template-columns: 1fr; }
+  .schedule-list li { grid-template-columns: 82px 1fr; }
+  .panel-body { padding: 12px; }
 
-  .content-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .community-panel {
-    grid-column: auto;
-  }
-
-  .podcast-art {
-    min-height: 75px;
-    font-size: 24px;
-  }
-
-  .podcast-card h3 {
-    font-size: 11px;
-  }
-
-  .podcast-card p {
-    font-size: 10px;
-  }
-
-  .feature-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .schedule-list li {
-    grid-template-columns: 82px 1fr;
-  }
+  .cstrEmbed { width: 100%; max-width: 100%; overflow: hidden; }
+  .cstrEmbed iframe { max-width: 100% !important; }
 }
 
-@media (prefers-reduced-motion: reduce) {
+@media (prefers-reduced-motion:reduce) {
   html { scroll-behavior: auto; }
   .ticker span { animation: none; }
 }
@@ -715,21 +579,15 @@ footer strong {
         <i class="fa-solid fa-store"></i> Tienda
       </button>
 
-      <a class="social-link youtube-link"
-         href="https://youtube.com/@lucascatolic"
-         target="_blank" rel="noopener" aria-label="YouTube">
+      <a class="social-link youtube-link" href="https://youtube.com/@lucascatolic" target="_blank" rel="noopener" aria-label="YouTube">
         <i class="fa-brands fa-youtube"></i><span>YouTube</span>
       </a>
 
-      <a class="social-link facebook-link"
-         href="https://www.facebook.com/gotade.esperanza.14/"
-         target="_blank" rel="noopener" aria-label="Facebook">
+      <a class="social-link facebook-link" href="https://www.facebook.com/gotade.esperanza.14/" target="_blank" rel="noopener" aria-label="Facebook">
         <i class="fa-brands fa-facebook"></i><span>Facebook</span>
       </a>
 
-      <a class="social-link instagram-link"
-         href="https://www.instagram.com/lucasradio/"
-         target="_blank" rel="noopener" aria-label="Instagram">
+      <a class="social-link instagram-link" href="https://www.instagram.com/lucasradio/" target="_blank" rel="noopener" aria-label="Instagram">
         <i class="fa-brands fa-instagram"></i><span>Instagram</span>
       </a>
 
@@ -737,8 +595,7 @@ footer strong {
         <i class="fa-solid fa-user-plus"></i> Seguir
       </button>
 
-      <button class="top-bell" type="button" onclick="enableNotifications()"
-              aria-label="Activar notificaciones" title="Notificaciones">
+      <button class="top-bell" type="button" onclick="enableNotifications()" aria-label="Activar notificaciones" title="Notificaciones">
         <i class="fa-solid fa-bell"></i>
       </button>
     </div>
@@ -762,18 +619,13 @@ footer strong {
 
 <section class="player-strip" aria-label="Radio en vivo">
   <div class="station-mark"><i class="fa-solid fa-mug-hot"></i></div>
-
   <div class="station-info">
     <strong>Café y Fe Radio</strong>
     <span>Transmisión prevista de 5:00 a. m. a 7:00 p. m.</span>
   </div>
-
-  <div class="player-actions">
-    <button class="round-play" type="button" aria-label="Ir al reproductor"
-      onclick="document.getElementById('reproductor').scrollIntoView({behavior:'smooth',block:'center'})">
-      <i class="fa-solid fa-play"></i>
-    </button>
-  </div>
+  <button class="round-play" type="button" aria-label="Ir al reproductor" onclick="document.getElementById('reproductor').scrollIntoView({behavior:'smooth',block:'center'})">
+    <i class="fa-solid fa-play"></i>
+  </button>
 </section>
 
 <main class="page-wrap">
@@ -800,22 +652,22 @@ footer strong {
       <section class="panel" id="reproductor">
         <div class="panel-head"><i class="fa-solid fa-headphones"></i> Escucha Café y Fe Radio</div>
         <div class="panel-body">
-          <p style="color:var(--text);font-size:13px">
+          <p style="color:var(--text);font-size:13px;margin:0 0 12px">
             Música católica, reflexiones y mensajes de esperanza.
           </p>
 
-        
-<div data-type="newStreamPlayer"
-     data-publicToken="547e9fb5-4710-4734-9ba1-618b5a4a8f42"
-     data-theme="dark"
-     data-color="#DDAE2B"
-     data-channelId=""
-     class="cstrEmbed">
-  <a href="https://www.caster.fm/" target="_blank" rel="noopener">
-    Powered by Caster.fm
-  </a>
-</div>
-
+          <!-- REPRODUCTOR CASTER.FM: conserva el token y los tres enlaces requeridos -->
+          <div class="cstrEmbed"
+               data-type="streamPlayer"
+               data-publicToken="547e9fb5-4710-4734-9ba1-618b5a4a8f42"
+               data-theme="dark"
+               data-color="DDAE2B"
+               data-channelId=""
+               data-rendered="false">
+            <a href="https://www.caster.fm">Shoutcast Hosting</a>
+            <a href="https://www.caster.fm">Stream Hosting</a>
+            <a href="https://www.caster.fm">Radio Server Hosting</a>
+          </div>
         </div>
       </section>
 
@@ -825,18 +677,15 @@ footer strong {
           <div class="podcast-grid">
             <article class="podcast-card">
               <div class="podcast-art"><i class="fa-solid fa-book-bible"></i></div>
-              <h3>Evangelio del día</h3>
-              <p>Reflexiones</p>
+              <h3>Evangelio del día</h3><p>Reflexiones</p>
             </article>
             <article class="podcast-card">
               <div class="podcast-art"><i class="fa-solid fa-guitar"></i></div>
-              <h3>Cantos para orar</h3>
-              <p>Música católica</p>
+              <h3>Cantos para orar</h3><p>Música católica</p>
             </article>
             <article class="podcast-card">
               <div class="podcast-art"><i class="fa-solid fa-cross"></i></div>
-              <h3>Predicación</h3>
-              <p>Fe y esperanza</p>
+              <h3>Predicación</h3><p>Fe y esperanza</p>
             </article>
           </div>
         </div>
@@ -846,17 +695,13 @@ footer strong {
         <section class="feature-card" id="oracion">
           <h3>🙏 Peticiones de oración</h3>
           <p>Comparte tus intenciones. Oremos juntos por ti.</p>
-          <a class="gold-btn" href="mailto:contacto@cafeyferadio.com?subject=Peticion%20de%20oracion">
-            Dejar petición
-          </a>
+          <a class="gold-btn" href="mailto:contacto@cafeyferadio.com?subject=Peticion%20de%20oracion">Dejar petición</a>
         </section>
 
         <section class="feature-card" id="apoya">
           <h3>❤️ Apoya Café y Fe Radio</h3>
           <p>Tu apoyo ayuda a compartir mensajes de fe y esperanza.</p>
-          <button class="gold-btn" type="button" onclick="openModal('supportModal')">
-            Apoyar ahora
-          </button>
+          <button class="gold-btn" type="button" onclick="openModal('supportModal')">Apoyar ahora</button>
         </section>
       </div>
     </div>
@@ -883,8 +728,7 @@ footer strong {
           data-theme="dark"
           data-lang="es"
           crossorigin="anonymous"
-          async>
-        </script>
+          async></script>
       </div>
     </section>
   </div>
@@ -939,7 +783,6 @@ footer strong {
   </div>
 </div>
 
-<script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
 <script>
 function openModal(id) {
   const modal = document.getElementById(id);
@@ -994,5 +837,9 @@ async function enableNotifications() {
   }
 }
 </script>
+
+<!-- IMPORTANTE: cargar el script de Caster.fm una sola vez -->
+<script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
+
 </body>
 </html>
