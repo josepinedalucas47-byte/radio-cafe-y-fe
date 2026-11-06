@@ -551,12 +551,13 @@ footer strong {
   .page-wrap { padding: 0 10px; }
   .content-grid { grid-template-columns: minmax(0,1fr); }
   .community-panel { grid-column: auto; }
-  
-/* ORDEN DE SECCIONES EN CELULARES */
-.content-grid > div:not(.feature-grid) {
+  .content-grid > div:not(.feature-grid) {
   display: contents;
 }
-
+.content-grid {
+  display: flex;
+  flex-direction: column;
+}
 #reproductor {
   order: 1;
 }
