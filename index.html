@@ -552,8 +552,8 @@ footer strong {
   .content-grid { grid-template-columns: minmax(0,1fr); }
   .community-panel { grid-column: auto; }
   
-/* CAMBIAR ORDEN SOLO EN CELULARES */
-.content-grid > div {
+/* ORDEN DE SECCIONES EN CELULARES */
+.content-grid > div:not(.feature-grid) {
   display: contents;
 }
 
@@ -561,11 +561,11 @@ footer strong {
   order: 1;
 }
 
-#programacion {
+.community-panel {
   order: 2;
 }
 
-#podcast {
+#programacion {
   order: 3;
 }
 
@@ -573,7 +573,7 @@ footer strong {
   order: 4;
 }
 
-.community-panel {
+#podcast {
   order: 5;
 }
 
