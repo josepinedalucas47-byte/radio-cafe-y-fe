@@ -550,6 +550,32 @@ footer strong {
   .page-wrap { padding: 0 10px; }
   .content-grid { grid-template-columns: minmax(0,1fr); }
   .community-panel { grid-column: auto; }
+  
+/* CAMBIAR ORDEN SOLO EN CELULARES */
+.content-grid > div {
+  display: contents;
+}
+
+#reproductor {
+  order: 1;
+}
+
+#programacion {
+  order: 2;
+}
+
+#podcast {
+  order: 3;
+}
+
+.feature-grid {
+  order: 4;
+}
+
+.community-panel {
+  order: 5;
+}
+
   .podcast-art { min-height: 75px; font-size: 24px; }
   .podcast-card h3 { font-size: 11px; }
   .podcast-card p { font-size: 10px; }
