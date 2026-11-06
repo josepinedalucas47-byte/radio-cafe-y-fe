@@ -616,6 +616,37 @@ footer strong {
 @media (prefers-reduced-motion:reduce) {
   html { scroll-behavior:auto; }
   .ticker span { animation:none; }
+}/* ALTURA FIJA PARA COMENTARIOS */
+#comunidad {
+  height: 650px;
+  max-height: 650px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+#comunidad .community-intro {
+  flex-shrink: 0;
+}
+
+#comunidad .giscus {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+#comunidad .giscus iframe {
+  width: 100% !important;
+  height: 430px !important;
+  max-height: 430px !important;
+}
+
+@media (max-width:650px) {
+  #comunidad {
+    height: 550px;
+    max-height: 550px;
+  }
 }
 </style>
 </head>
