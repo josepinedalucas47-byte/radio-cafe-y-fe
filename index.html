@@ -635,7 +635,25 @@ footer strong {
   overflow-y: auto;
   overflow-x: hidden;
 }
+/* BARRA EXTERIOR NEGRA Y DORADA */
+#comunidad .giscus {
+  scrollbar-color: #D4AF37 #080808;
+  scrollbar-width: thin;
+}
 
+#comunidad .giscus::-webkit-scrollbar {
+  width: 8px;
+}
+
+#comunidad .giscus::-webkit-scrollbar-track {
+  background: #080808;
+}
+
+#comunidad .giscus::-webkit-scrollbar-thumb {
+  background: #D4AF37;
+  border-radius: 10px;
+  border: 2px solid #080808;
+}
 #comunidad .giscus iframe {
   display: block;
   width: 100% !important;
