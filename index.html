@@ -327,7 +327,8 @@ button { cursor: pointer; }
 
 .feature-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-column: 1;
+  grid-template-columns: 1fr;
   gap: 12px;
   margin-top: 14px;
 }
@@ -664,7 +665,20 @@ footer strong {
         </ul>
       </div>
     </section>
+<!-- PETICIONES Y APOYO -->
+<div class="feature-grid">
+  <section class="feature-card" id="oracion">
+    <h3>🙏 Peticiones de oración</h3>
+    <p>Comparte tus intenciones. Oremos juntos por ti.</p>
+    <a class="gold-btn" href="mailto:contacto@cafeyferadio.com?subject=Peticion%20de%20oracion">Dejar petición</a>
+  </section>
 
+  <section class="feature-card" id="apoya">
+    <h3>❤️ Apoya Café y Fe Radio</h3>
+    <p>Tu apoyo ayuda a compartir mensajes de fe y esperanza.</p>
+    <button class="gold-btn" type="button" onclick="openModal('supportModal')">Apoyar ahora</button>
+  </section>
+</div>
     <div>
       <section class="panel" id="reproductor">
         <div class="panel-head"><i class="fa-solid fa-headphones"></i> Escucha Café y Fe Radio</div>
@@ -711,22 +725,10 @@ footer strong {
         </div>
       </section>
 
-      <div class="feature-grid">
-        <section class="feature-card" id="oracion">
-          <h3>🙏 Peticiones de oración</h3>
-          <p>Comparte tus intenciones. Oremos juntos por ti.</p>
-          <a class="gold-btn" href="mailto:contacto@cafeyferadio.com?subject=Peticion%20de%20oracion">Dejar petición</a>
-        </section>
 
-        <section class="feature-card" id="apoya">
-          <h3>❤️ Apoya Café y Fe Radio</h3>
-          <p>Tu apoyo ayuda a compartir mensajes de fe y esperanza.</p>
-          <button class="gold-btn" type="button" onclick="openModal('supportModal')">Apoyar ahora</button>
-        </section>
-      </div>
     </div>
 
-    <section class="panel community-panel" id="comunidad">
+
       <div class="community-intro">
         <div class="panel-head" style="padding:0 0 8px;border:0">
           <i class="fa-solid fa-comments"></i> Comentarios de la comunidad
