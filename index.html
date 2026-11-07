@@ -1092,6 +1092,33 @@ async function enableNotifications() {
       }
  }, 2000);
   });
+</script><audio id="ambient-audio"
+  src="./andriig-christian-worship-music-603985.mp3"
+  preload="auto">
+</audio>
+
+<script>
+(function() {
+  const audio = document.getElementById('ambient-audio');
+  let started = false;
+let radioActive = false;
+  document.addEventListener('pointerdown', function(event) {
+    const player = event.target.closest('.cstrEmbed');
+
+ if (player) {
+  radioActive = true;
+  audio.pause();
+  return;
+}
+
+    if (!started && !radioActive) {
+      audio.volume = 0.12;
+      audio.play().then(function() {
+        started = true;
+      }).catch(function() {});
+    }
+  }, true);
+})();
 </script>
 </body>
 </html>
