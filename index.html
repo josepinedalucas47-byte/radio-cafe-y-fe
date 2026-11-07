@@ -41,11 +41,10 @@ button { cursor:pointer; }
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgba(18, 11, 7, 0.96);
+  background: transparent;
   opacity: 1;
   visibility: visible;
-  transition: opacity 1.5s ease, visibility 1.5s ease;
-}
+transition: opacity 1s ease, visibility 1s ease;
 
 #welcome-screen img {
   width: 92%;
@@ -1090,7 +1089,7 @@ async function enableNotifications() {
       if (welcome) {
         welcome.classList.add('hide');
       }
-    }, 4000);
+ }, 2000);
   });
 </script>
 </body>
