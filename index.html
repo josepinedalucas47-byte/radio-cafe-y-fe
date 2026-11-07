@@ -33,7 +33,33 @@ body {
 
 button,a { font:inherit; }
 button { cursor:pointer; }
+/* BIENVENIDA DE JESUS */
+#welcome-screen {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(18, 11, 7, 0.96);
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 1.5s ease, visibility 1.5s ease;
+}
 
+#welcome-screen img {
+  width: 92%;
+  max-width: 760px;
+  max-height: 92vh;
+  object-fit: contain;
+  filter: drop-shadow(0 0 20px rgba(218, 173, 75, 0.25));
+}
+
+#welcome-screen.hide {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
 /* PORTADA */
 .cover {
   position:relative;
@@ -671,7 +697,9 @@ footer strong {
 </head>
 
 <body>
-
+<div id="welcome-screen">
+  <img src="jesus-cafe.png" alt="Jesús ofreciendo una taza de café">
+</div>
 <header class="cover" id="inicio">
   <div class="topbar">
     <a class="brand" href="#inicio">☕ Café y Fe RADIO</a>
@@ -1055,6 +1083,15 @@ async function enableNotifications() {
 
 <!-- CASTER.FM: CARGAR UNA SOLA VEZ -->
 <script src="https://cdn.cloud.caster.fm/widgets/embed.js"></script>
-
+<script>
+  window.addEventListener('load', function() {
+    setTimeout(function() {
+      const welcome = document.getElementById('welcome-screen');
+      if (welcome) {
+        welcome.classList.add('hide');
+      }
+    }, 4000);
+  });
+</script>
 </body>
 </html>
