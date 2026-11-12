@@ -1293,5 +1293,80 @@ let radioActive = false;
 })();
 </script>
 
+<script>
+(function () {
+  const SUPABASE_URL =
+    "https://xrhqcjahccljfbftfeyl.supabase.co";
+
+  // Usa la misma clave publicable que ya configuraste
+  // para enviar peticiones.
+  const SUPABASE_KEY = "PEGA_AQUI_TU_PUBLISHABLE_KEY";
+
+  async function cargarPeticiones() {
+    const lista = document.getElementById("listaPeticiones");
+    if (!lista) return;
+
+    lista.textContent = "Cargando peticiones...";
+
+    try {
+      const respuesta = await fetch(
+        SUPABASE_URL +
+        "/rest/v1/peticiones_oracion" +
+        "?select=nombre,peticion,created_at" +
+        "&order=created_at.desc&limit=50",
+        {
+          headers: {
+            "apikey": SUPABASE_KEY
+          }
+        }
+      );
+
+      if (!respuesta.ok) {
+        throw new Error("Error al consultar Supabase");
+      }
+
+      const peticiones = await respuesta.json();
+      lista.replaceChildren();
+
+      if (peticiones.length === 0) {
+        lista.textContent = "Todavía no hay peticiones.";
+        return;
+      }
+
+      peticiones.forEach(function (item) {
+        const tarjeta = document.createElement("div");
+        tarjeta.style.cssText =
+          "background:#38271D;" +
+          "border:1px solid #D5A437;" +
+          "border-radius:10px;" +
+          "padding:12px;margin-bottom:10px;";
+
+        const nombre = document.createElement("strong");
+        nombre.style.color = "#F1C85C";
+        nombre.textContent = item.nombre || "Anónimo";
+
+        const mensaje = document.createElement("p");
+        mensaje.style.cssText =
+          "color:#FFFFFF;white-space:pre-wrap;" +
+          "overflow-wrap:anywhere;margin:8px 0 0;";
+        mensaje.textContent = item.peticion || "";
+
+        tarjeta.append(nombre, mensaje);
+        lista.appendChild(tarjeta);
+      });
+
+    } catch (error) {
+      lista.textContent =
+        "No se pudieron cargar las peticiones.";
+      console.error(error);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    cargarPeticiones();
+  });
+})();
+</script>
+
 </body>
 </html>
