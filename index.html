@@ -1452,5 +1452,51 @@ let radioActive = false;
 })();
 </script>
 
+<script>
+(function () {
+  const parametros = new URLSearchParams(window.location.hash.substring(1));
+
+  if (parametros.get("type") !== "recovery") return;
+
+  async function recuperarClave() {
+    const cliente = window.clientePeticionesAdmin;
+
+    if (!cliente) {
+      alert("No se encontró la conexión de administrador.");
+      return;
+    }
+
+    const { data, error } = await cliente.auth.getSession();
+
+    if (error || !data.session) {
+      alert("El enlace no se pudo validar. Solicita uno nuevo.");
+      return;
+    }
+
+    const nuevaClave = prompt("Escribe tu nueva contraseña (mínimo 8 caracteres):");
+    if (!nuevaClave) return;
+
+    if (nuevaClave.length < 8) {
+      alert("La contraseña debe tener al menos 8 caracteres.");
+      return;
+    }
+
+    const resultado = await cliente.auth.updateUser({
+      password: nuevaClave
+    });
+
+    if (resultado.error) {
+      alert("No se pudo cambiar la contraseña: " + resultado.error.message);
+      return;
+    }
+
+    alert("Contraseña actualizada correctamente.");
+    history.replaceState(null, "", window.location.pathname);
+  }
+
+  recuperarClave();
+})();
+</script>
+
 </body>
 </html>
