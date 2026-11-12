@@ -1456,7 +1456,9 @@ let radioActive = false;
 (function () {
   const parametros = new URLSearchParams(window.location.hash.substring(1));
 
-  if (parametros.get("type") !== "recovery") return;
+  
+if (parametros.get("type") !== "recovery") return;
+alert("Se detectó el enlace de recuperación.");
 
   async function recuperarClave() {
     const cliente = window.clientePeticionesAdmin;
