@@ -855,10 +855,12 @@ footer strong {
       <section class="feature-card" id="oracion">
         <h3>🙏 Peticiones de oración</h3>
         <p>Comparte tus intenciones. Oremos juntos por ti.</p>
-        <a class="gold-btn"
-           href="mailto:contacto@cafeyferadio.com?subject=Peticion%20de%20oracion">
-          Dejar petición
-        </a>
+      
+<button class="gold-btn" type="button"
+  onclick="openModal('prayerModal')">
+  Dejar petición
+</button>
+
       </section>
 
       <section class="feature-card" id="apoya">
@@ -1018,6 +1020,51 @@ footer strong {
     <h2 id="supportTitle">Apoya Café y Fe Radio ❤️</h2>
     <p>Gracias por ayudarnos a compartir fe, esperanza y caridad.</p>
     <p>El botón queda listo para conectar tu enlace de donaciones.</p>
+  </div>
+</div>
+
+<!-- VENTANA PETICIONES DE ORACION -->
+<div class="modal" id="prayerModal"
+     role="dialog" aria-modal="true"
+     aria-labelledby="prayerTitle">
+
+  <div class="modal-box">
+
+    <button class="modal-close" type="button"
+      aria-label="Cerrar"
+      onclick="closeModal('prayerModal')">×</button>
+
+    <h2 id="prayerTitle">
+      🙏 Peticiones de oración
+    </h2>
+
+    <p>Comparte tus intenciones.
+       Estaremos orando por ti. ❤️</p>
+
+    <form id="prayerForm">
+
+      <label for="prayerName">Tu nombre (opcional)</label>
+      <input type="text" id="prayerName"
+        placeholder="Escribe tu nombre"
+        maxlength="100"
+        style="width:100%;padding:12px;margin:10px 0;">
+
+      <label for="prayerMessage">Tu petición de oración</label>
+      <textarea id="prayerMessage"
+        placeholder="Escribe aquí tu petición..."
+        required maxlength="3000"
+        style="width:100%;min-height:130px;padding:12px;margin:10px 0;"></textarea>
+
+      <button class="gold-btn" type="submit">
+        🙏 Enviar petición
+      </button>
+
+    </form>
+
+    <p style="font-size:12px;margin-top:15px;">
+      🔒 Tu petición será tratada de forma privada.
+    </p>
+
   </div>
 </div>
 
