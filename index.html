@@ -1075,6 +1075,19 @@ footer strong {
     Unidos en la fe, oramos unos por otros.
   </p>
 
+<div style="text-align:center;margin:12px 0;">
+  <button
+    id="adminPeticionesBtn"
+    type="button"
+    onclick="abrirAdminPeticiones()"
+    style="background:transparent;color:#D5A437;
+           border:1px solid #D5A437;
+           border-radius:8px;padding:6px 12px;
+           font-size:12px;cursor:pointer;">
+    🔐 Administrar peticiones
+  </button>
+</div>
+
   <div id="listaPeticiones"
        style="max-height:300px;
               overflow-y:auto;
@@ -1312,7 +1325,7 @@ let radioActive = false;
       const respuesta = await fetch(
         SUPABASE_URL +
         "/rest/v1/peticiones_oracion" +
-        "?select=nombre,peticion,created_at" +
+       "?select=id,nombre,peticion,created_at" +
         "&order=created_at.desc&limit=50",
         {
           headers: {
@@ -1365,6 +1378,77 @@ let radioActive = false;
   document.addEventListener("DOMContentLoaded", function () {
     cargarPeticiones();
   });
+})();
+</script>
+
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+(function () {
+  const SUPABASE_URL = "https://xrhqcjahccljfbttfeyl.supabase.co";
+  const SUPABASE_KEY = "PEGA_AQUI_TU_PUBLISHABLE_KEY";
+  const ADMIN_UID = "1859a3cc-1fac-43f7-9214-b2cd391f4099";
+
+  const cliente = window.supabase.createClient(
+    SUPABASE_URL,
+    SUPABASE_KEY
+  );
+
+  async function verificarAdministrador() {
+    const { data } = await cliente.auth.getUser();
+    const esAdmin = data.user?.id === ADMIN_UID;
+
+    const boton = document.getElementById("adminPeticionesBtn");
+    if (boton) {
+      boton.textContent = esAdmin
+        ? "🔓 Administración activa"
+        : "🔐 Administrar peticiones";
+    }
+
+    return esAdmin;
+  }
+
+  window.abrirAdminPeticiones = async function () {
+    if (await verificarAdministrador()) {
+      const salir = confirm(
+        "Ya estás conectado como administrador. ¿Quieres cerrar sesión?"
+      );
+
+      if (salir) {
+        await cliente.auth.signOut();
+        await verificarAdministrador();
+      }
+      return;
+    }
+
+    const correo = prompt("Correo de administrador:");
+    if (!correo) return;
+
+    const clave = prompt("Contraseña de administrador:");
+    if (!clave) return;
+
+    const { error } = await cliente.auth.signInWithPassword({
+      email: correo,
+      password: clave
+    });
+
+    if (error) {
+      alert("No se pudo iniciar sesión. Revisa tus datos.");
+      return;
+    }
+
+    await verificarAdministrador();
+    alert("Acceso de administrador activado.");
+  };
+
+  window.clientePeticionesAdmin = cliente;
+  window.verificarAdminPeticiones = verificarAdministrador;
+
+  cliente.auth.onAuthStateChange(() => {
+    verificarAdministrador();
+  });
+
+  verificarAdministrador();
 })();
 </script>
 
